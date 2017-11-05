@@ -1,0 +1,41 @@
+.slider {
+
+  &__img {
+    height: 665px;
+    background-image: url(../img/banner.jpg);
+    background-repeat no-repeat;
+    background-position center;
+    background-size: cover;
+
+  }
+  &__wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  &__text:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 92px;
+    background-color: #f16d7f;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+
+  }
+  &__text {
+    padding-top: 276px;
+    position: relative;
+    padding-left 24px;
+    &--big {
+      font-size: 60px;
+    }
+    &--small {
+      font-size: 40px;
+
+    }
+    &--pinc {
+      color: #f16d7f;
+    }
+  }
+}
