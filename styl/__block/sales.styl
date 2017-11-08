@@ -1,7 +1,7 @@
 .sales {
-  width:  1140px;
+  width: 1140px;
   margin: 0 auto;
-  margin-top:  113px;
+  margin-top: 113px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -23,6 +23,7 @@
     height: 78px;
     top: 146px;
     left: 40px;
+    color: #fff;
     &--big {
       font-size: 53.6px;
       letter-spacing: 1.3px;
@@ -38,3 +39,54 @@
   }
 
 }
+
+.benefit {
+  &__title{
+    font-size:20px;
+    font-weight: 900;
+  }
+    &__text{
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+
+
+
+  &__list {
+    width: 375px;
+    height: 529px;
+    background-color: #222224
+
+  }
+  &__item {
+    width: 215px;
+    position: relative;
+    margin-left:100px;
+    margin-top: 50px;
+    color: #fff
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: -75px;
+    background-repeat: no-repeat;
+    &--delivery {
+      width: 50px;
+      height: 40px;
+      background-image: url(../img/Forma_2.svg)
+    }
+    &--sales {
+      background-image: url(../img/Forma_3.svg)
+      width: 40px;
+      height: 40px;
+
+    }
+    &--quality {
+      background-image: url(../img/Forma_1.svg)
+      width: 50px;
+      height: 40px;
+     }
+  }
+}
+
