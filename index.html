@@ -14,10 +14,13 @@
 			<a class="logo__link" href="index.html"><img class="logo__img" src="img/logo.png" alt="logo"></a>
 		</div>
 		<div class="header__search">
-			<form action="#" id="search__form">
-				<select class="search__list" name="search__list" id="" form="search__form">
-					<option value="Browse" class="search__item" disabled selected>Browse</option>
-					<option value="Women" class="search__item search__item__category" disabled>Women</option>
+			<form action="#" id="search__form" class="search">
+				<select class="search__list" name="search__list" id="search__select" form="search__form">
+					<option value="Browse" class="search__item search__item--title" disabled selected>Browse</option>
+					<!--
+
+
+					<option value="Women" class="search__item search__item--category" disabled>Women</option>
 					<option value="Dresses" class="search__item">Dresses</option>
 					<option value="Tops" class="search__item">Tops</option>
 					<option value="Sweaters/Knits" class="search__item">Sweaters/Knits</option>
@@ -27,14 +30,39 @@
 					<option value="Leggings/Pants" class="search__item">Leggings/Pants</option>
 					<option value="Skirts/Shorts" class="search__item">Skirts/Shorts</option>
 					<option value="Accessories " class="search__item">Accessories</option>
-					<option value="Men" class="search__item search__item__category" disabled>Men</option>
+					<option value="Men" class="search__item search__item--category" disabled>Men</option>
 					<option value="Tees/Tank tops" class="search__item">Tees/Tank tops</option>
 					<option value="Shirts/Polos" class="search__item">Shirts/Polos</option>
 					<option value="Sweaters" class="search__item">Sweaters</option>
 					<option value="Sweatshirts/Hoodies" class="search__item">Sweatshirts/Hoodies</option>
 					<option value="Blazers" class="search__item">Blazers</option>
 					<option value="Jackets/vests" class="search__item">Jackets/vests</option>
+
+					-->
 				</select>
+				<div class="search-select">
+					<ul class="search-select__list">
+						<li class="search-select__item search-select__item--category" data-name="Women">Women</li>
+						<li class="search-select__item" data-value="WomenDresses">Dresses</li>
+						<li class="search-select__item" data-value="WomenTops">Tops</li>
+						<li class="search-select__item" data-value="WomenSweaters/Knits">Sweaters/Knits</li>
+						<li class="search-select__item" data-value="WomenJacketsCoats">Jackets/Coats</li>
+						<li class="search-select__item" data-value="WomenBlazers">Blazers</li>
+						<li class="search-select__item" data-value="WomenDenim">Denim</li>
+						<li class="search-select__item" data-value="WomenLeggingsPants">Leggings/Pants</li>
+						<li class="search-select__item" data-value="WomenSkirtsShorts">Skirts/Shorts</li>
+						<li class="search-select__item" data-value="WomenAccessories">Accessories</li>
+						<li class="search-select__item search-select__item--category" data-value="Men">Men</li>
+						<li class="search-select__item" data-value="MenTeesTank tops">Tees/Tank tops</li>
+						<li class="search-select__item" data-value="MenShirtsPolos">Shirts/Polos</li>
+						<li class="search-select__item" data-value="MenSweaters">Sweaters</li>
+						<li class="search-select__item" data-value="MenSweatshirts">Sweatshirts</li>
+						<li class="search-select__item" data-value="MenBlazers">Blazers</li>
+						<li class="search-select__item" data-value="MenJacketsVests">Jackets/vests</li>
+					</ul>
+				</div>
+
+
 				<input class="search__input" type="text">
 				<button class="search__btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
@@ -91,6 +119,7 @@
 			<li class="nav__item"><a href="#">Man</a></li>
 			<li class="nav__item"><a href="#">Women</a>
 				<div class="sub-nav">
+					<div class="sub-nav__col">
 					<ul class="sub-nav__list">
 						<li class="sub-nav__item"><a href="">Women</a></li>
 						<li class="sub-nav__item"><a href="">Dresses</a></li>
@@ -103,6 +132,8 @@
 						<li class="sub-nav__item"><a href="">Skirts/Shorts</a></li>
 						<li class="sub-nav__item"><a href="">Accessories</a></li>
 					</ul>
+				</div>
+					<div class="sub-nav__col">
 					<ul class="sub-nav__list">
 						<li class="sub-nav__item"><a href="">Women</a></li>
 						<li class="sub-nav__item"><a href="">Dresses</a></li>
@@ -116,6 +147,8 @@
 						<li class="sub-nav__item"><a href="">Tops</a></li>
 						<li class="sub-nav__item"><a href="">Sweaters/Knits</a></li>
 					</ul>
+				</div>
+					<div class="sub-nav__col">
 					<ul class="sub-nav__list">
 						<li class="sub-nav__item"><a href="">Women</a></li>
 						<li class="sub-nav__item"><a href="">Dresses</a></li>
@@ -124,6 +157,7 @@
 						<li class="sub-nav__item"><a href="">Jackets/Coats</a></li>
 						<li class="sub-nav__item sub-nav__super-sale"><a href="">Super sale</a></li>
 					</ul>
+				</div>
 				</div>
 			</li>
 			<li class="nav__item"><a href="#">Kids </a></li>
