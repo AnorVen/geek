@@ -3,8 +3,285 @@
 <head>
 	<meta charset="UTF-8">
 	<title>single page</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+
+<header class="header">
+	<div class="header__top-wrap">
+		<div class="header__logo">
+			<a class="logo__link" href="index.html"><img class="logo__img" src="img/logo.png" alt="logo"></a>
+		</div>
+		<div class="header__search">
+			<form action="#" id="search__form" class="search">
+				<select class="search__list" name="search__list" id="search__select" form="search__form">
+					<option value="Browse" class="search__item search__item--title" disabled selected>Browse</option>
+					<!--
+
+
+					<option value="Women" class="search__item search__item--category" disabled>Women</option>
+					<option value="Dresses" class="search__item">Dresses</option>
+					<option value="Tops" class="search__item">Tops</option>
+					<option value="Sweaters/Knits" class="search__item">Sweaters/Knits</option>
+					<option value="Jackets/Coats" class="search__item">Jackets/Coats</option>
+					<option value="Blazers" class="search__item">Blazers</option>
+					<option value="Denim" class="search__item">Denim</option>
+					<option value="Leggings/Pants" class="search__item">Leggings/Pants</option>
+					<option value="Skirts/Shorts" class="search__item">Skirts/Shorts</option>
+					<option value="Accessories " class="search__item">Accessories</option>
+					<option value="Men" class="search__item search__item--category" disabled>Men</option>
+					<option value="Tees/Tank tops" class="search__item">Tees/Tank tops</option>
+					<option value="Shirts/Polos" class="search__item">Shirts/Polos</option>
+					<option value="Sweaters" class="search__item">Sweaters</option>
+					<option value="Sweatshirts/Hoodies" class="search__item">Sweatshirts/Hoodies</option>
+					<option value="Blazers" class="search__item">Blazers</option>
+					<option value="Jackets/vests" class="search__item">Jackets/vests</option>
+
+					-->
+				</select>
+				<div class="search-select">
+					<ul class="search-select__list">
+						<li class="search-select__item search-select__item--category" data-name="Women">Women</li>
+						<li class="search-select__item" data-value="WomenDresses">Dresses</li>
+						<li class="search-select__item" data-value="WomenTops">Tops</li>
+						<li class="search-select__item" data-value="WomenSweaters/Knits">Sweaters/Knits</li>
+						<li class="search-select__item" data-value="WomenJacketsCoats">Jackets/Coats</li>
+						<li class="search-select__item" data-value="WomenBlazers">Blazers</li>
+						<li class="search-select__item" data-value="WomenDenim">Denim</li>
+						<li class="search-select__item" data-value="WomenLeggingsPants">Leggings/Pants</li>
+						<li class="search-select__item" data-value="WomenSkirtsShorts">Skirts/Shorts</li>
+						<li class="search-select__item" data-value="WomenAccessories">Accessories</li>
+						<li class="search-select__item search-select__item--category" data-value="Men">Men</li>
+						<li class="search-select__item" data-value="MenTeesTank tops">Tees/Tank tops</li>
+						<li class="search-select__item" data-value="MenShirtsPolos">Shirts/Polos</li>
+						<li class="search-select__item" data-value="MenSweaters">Sweaters</li>
+						<li class="search-select__item" data-value="MenSweatshirts">Sweatshirts</li>
+						<li class="search-select__item" data-value="MenBlazers">Blazers</li>
+						<li class="search-select__item" data-value="MenJacketsVests">Jackets/vests</li>
+					</ul>
+				</div>
+
+
+				<input class="search__input" type="text">
+				<button class="search__btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+			</form>
+		</div>
+		<div class="header__card">
+			<div class="card__img card__img--card">
+				<span class="card__img--text">2</span>
+			</div>
+			<div class="card__menu">
+
+				<div class="purchase__list">
+					<div class="purchase__item">
+						<div class="purchase__img purchase__img--box1"></div>
+						<div class="purchase__info">
+							<p class="purchase__title">Rebox Zane</p>
+							<div class="purchase__reiting"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></div>
+							<p class="purchase__price">1 x $250</p>
+						</div>
+						<div class="purchase__delite"><i class="fa fa-times-circle" aria-hidden="true"></i>
+
+						</div>
+					</div>
+
+					<div class="purchase__item">
+						<div class="purchase__img purchase__img--box2"></div>
+						<div class="purchase__info">
+							<p class="purchase__title">Rebox Zane</p>
+							<div class="purchase__reiting"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></div>
+							<p class="purchase__price">1 x $250</p>
+						</div>
+						<div class="purchase__delite"><i class="fa fa-times-circle" aria-hidden="true"></i>
+
+						</div>
+					</div>
+					<div class="card__total-price total-price">
+						<p class="total-price__text">Total </p>
+						<p class="total-price__price">$500</p>
+
+					</div>
+					<div class="card__link">
+						<div class="card__checkout"><a href="#">Checkout</a></div>
+						<div class="card__go-to-card"><a href="#">Go to card</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__account">
+			<a href="#">My account</a><i class="fa fa-caret-down" aria-hidden="true"></i>
+		</div>
+	</div>
+	<nav class="header__nav">
+		<ul class="nav__list">
+			<li class="nav__item"><a href="#">Home</a></li>
+			<li class="nav__item"><a href="#">Man</a></li>
+			<li class="nav__item"><a href="#">Women</a>
+				<div class="sub-nav">
+					<div class="sub-nav__col">
+						<ul class="sub-nav__list">
+							<li class="sub-nav__item sub-nav__item--category"><a href="">Women</a></li>
+							<li class="sub-nav__item"><a href="">Dresses</a></li>
+							<li class="sub-nav__item"><a href="">Tops</a></li>
+							<li class="sub-nav__item"><a href="">Sweaters/Knits</a></li>
+							<li class="sub-nav__item"><a href="">Jackets/Coats</a></li>
+							<li class="sub-nav__item"><a href="">Blazers</a></li>
+							<li class="sub-nav__item"><a href="">Denim</a></li>
+							<li class="sub-nav__item"><a href="">Leggings/Pants</a></li>
+							<li class="sub-nav__item"><a href="">Skirts/Shorts</a></li>
+							<li class="sub-nav__item"><a href="">Accessories</a></li>
+						</ul>
+					</div>
+					<div class="sub-nav__col">
+						<ul class="sub-nav__list">
+							<li class="sub-nav__item sub-nav__item--category"><a href="">Women</a></li>
+							<li class="sub-nav__item"><a href="">Dresses</a></li>
+							<li class="sub-nav__item"><a href="">Tops</a></li>
+							<li class="sub-nav__item"><a href="">Sweaters/Knits</a></li>
+							<li class="sub-nav__item"><a href="">Jackets/Coats</a></li>
+						</ul>
+						<ul class="sub-nav__list">
+							<li class="sub-nav__item sub-nav__item--category"><a href="">Women</a></li>
+							<li class="sub-nav__item"><a href="">Dresses</a></li>
+							<li class="sub-nav__item"><a href="">Tops</a></li>
+							<li class="sub-nav__item"><a href="">Sweaters/Knits</a></li>
+						</ul>
+					</div>
+					<div class="sub-nav__col">
+						<ul class="sub-nav__list">
+							<li class="sub-nav__item sub-nav__item--category"><a href="">Women</a></li>
+							<li class="sub-nav__item"><a href="">Dresses</a></li>
+							<li class="sub-nav__item"><a href="">Tops</a></li>
+							<li class="sub-nav__item"><a href="">Sweaters/Knits</a></li>
+							<li class="sub-nav__item"><a href="">Jackets/Coats</a></li>
+							<li class="sub-nav__item sub-nav__super-sale"><a href="">Super
+								<br> sale!</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="nav__item"><a href="#">Kids </a></li>
+			<li class="nav__item"><a href="#">Accoseriese </a></li>
+			<li class="nav__item"><a href="#">Featured</a></li>
+			<li class="nav__item"><a href="#">Hot Deals</a></li>
+		</ul>
+	</nav>
+</header>
+
+<main>
+	<section class="newArrivals">
+		<div class="newArrivals__wrap">
+			<div class="newArrivals__title">
+				<p>New Arrivals </p>
+			</div>
+			<div class="newArrivals__menu">
+				<a href="#" class="newArrivals__menu-item">Home </a> /
+				<a href="#" class="newArrivals__menu-item"> Men </a> /
+				<a href="#" class="newArrivals__menu-item newArrivals__menu-item--pink"> New Arrivals</a>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section class="feetback">
+		<div class="feetback__output">
+			<p>
+			<blockquote class="feetback__text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+				a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”
+			</blockquote>
+			</p>
+			<p class="feetback__author">Bin Burhan</p>
+			<p class="feetback__city">Dhaka, Bd</p>
+			<div class="feetback__img"></div>
+			<div class="feetback__btn-list">
+				<div class="feetback__btn-item"></div>
+				<div class="feetback__btn-item feetback__btn-item--active"></div>
+				<div class="feetback__btn-item"></div>
+			</div>
+		</div>
+		<div class="subscribe">
+			<h4 class="subscribe__title">Subscribe</h4>
+			<p class="subscribe__text">FOR OUR NEWLETTER AND PROMOTION</p>
+			<form action="#" class="subscribe__form">
+				<input type="text" class="subscribe__input" placeholder="Enter Your Email">
+				<button type="submit" class="subscribe__submit">Subscribe</button>
+			</form>
+		</div>
+
+
+	</section>
+</main>
+
+
+
+<footer class="footer">
+	<div class="footer__main">
+		<div class="footer__desc">
+			<div class="footer__logo"></div>
+			<div class="footer__text"><p>Objectively transition extensive data rather than cross functional solutions.
+				Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate an
+				expanded array of processes and cross-unit partnerships.</p>
+
+				<p>Efficiently plagiarize 24/365 action items and focused infomediaries.
+					Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+				</p></div>
+		</div>
+		<div class="footer__menu">
+			<div>
+				<h4 class="menu__title">COMPANY</h4>
+				<ul class="menu__list">
+					<li class="menu__item"><a href="" class="menu__link">Home</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Shop</a></li>
+					<li class="menu__item"><a href="" class="menu__link">About</a></li>
+					<li class="menu__item"><a href="" class="menu__link">How It Works</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Contact</a></li>
+				</ul>
+			</div>
+			<div>
+				<h4 class="menu__title">INFORMATION</h4>
+				<ul class="menu__list">
+					<li class="menu__item"><a href="" class="menu__link">Tearms & Condition</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Privacy Policy</a></li>
+					<li class="menu__item"><a href="" class="menu__link">How to Buy</a></li>
+					<li class="menu__item"><a href="" class="menu__link">How to Sell</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Promotion</a></li>
+				</ul>
+			</div>
+			<div>
+				<h4 class="menu__title">SHOP CATEGORY</h4>
+				<ul class="menu__list">
+					<li class="menu__item"><a href="" class="menu__link">Men</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Women</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Child</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Apparel</a></li>
+					<li class="menu__item"><a href="" class="menu__link">Brows All</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footer__copy">
+		<div class="footer__copy--wrap">
+			<div class="copy__text">© 2017 Brand All Rights Reserved.</div>
+			<div class="copy__social">
+				<ul class="social__list">
+					<li class="social__item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li class="social__item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li class="social__item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+					<li class="social__item"><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i>
+					</a></li>
+					<li class="social__item"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+</footer>
 
 </body>
 </html>
