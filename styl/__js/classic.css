@@ -8,27 +8,26 @@
 }
 
 .ui-rangeSlider .ui-rangeSlider-innerBar{
-	height:16px;
-	margin:3px 6px;
-	background:#DDD;
+	height: 6px;
+	border-radius: 3px;
+	background-color: #f0f0f0;
 }
 
 .ui-rangeSlider .ui-rangeSlider-handle{
-	width:6px;
-	height:22px;
-	background:#AAA;
-	background:rgba(100,100,100, 0.3);
+	width:14px;
+	height:14px;
+	background: #f16d7f;
 	cursor:col-resize;
 }
 
 .ui-rangeSlider .ui-rangeSlider-bar{
 	margin: 1px 0;
-	background:#CCC;
-	background:rgba(100,100,150, 0.2);
-	height:20px;
 	cursor:move;
 	cursor:grab;
 	cursor: -moz-grab;
+	width: 124px;
+	height: 6px;
+	background-color: #f16d7f;
 }
 
 .ui-rangeSlider .ui-rangeSlider-bar.ui-draggable-dragging{
@@ -70,6 +69,7 @@
 }
 
 .ui-rangeSlider-label{
+	display: none;
 	margin:0 2px 2px;
 	background-image:url('icons-classic/label.png');
 	background-position:bottom center;

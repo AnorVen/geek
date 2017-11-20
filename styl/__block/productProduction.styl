@@ -1,12 +1,17 @@
 .productProduction {
   padding-bottom 90px
-  padding-top: 60px;
+  padding-top: 50px;
+
   &__wrap {
-    wrapper();
-    col();
+
+    wrapper()
+  }
+  &__row {
+    row-flex()
   }
   &__nav {
-    col-3();
+    col()
+    col-3()
 
   }
   .productNav {
@@ -15,7 +20,7 @@
     }
 
     &__label {
-      padding-left: 16px;
+      padding-left: 30px;
       padding-top: 14px;
       padding-bottom: 14px;
       font-size: 14px;
@@ -27,9 +32,9 @@
       border-bottom: solid 1px #ebebeb;
       box-sizing border-box;
 
-      .fa{
+      .fa {
         position: absolute;
-        right: 0;
+        right: 18px;
         color: brownish-grey;
       }
 
@@ -41,8 +46,8 @@
       height: 37px;
       background-color: medium-pink;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 7px;
+      left: 14px;
     }
 
     &__list {
@@ -57,33 +62,148 @@
 
       a {
         display: block;
-        padding-top: 11px
-        padding-bottom: 11px;
+        padding-top: 8px;
+        padding-bottom: 8px;
         font-size: 14px;
         color: brownish-grey;
         box-sizing: border-box
       }
-        a:hover{
-          padding-bottom: 10px;
-          border-bottom: 1px solid medium-pink;
-        }
+      a:hover {
+        padding-bottom: 7px;
+        border-bottom: 1px solid medium-pink;
+      }
 
     }
 
   }
-  input:checked +label+.productNav__list{
+  input:checked + label + .productNav__list {
     height: auto;
-    margin-top: 11px;
-    margin-bottom: 42px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: 33px;
 
   }
-  input:checked + label>.fa{
+  input:checked + label > .fa {
     transform rotate(180deg);
     color: medium-pink;
   }
 
+  &__main {
+    col()
+    col-9()
+    padding-top: 10px;
 
-   &__main{
-     col-9();
-   }
+  }
+  .productSort {
+    row-flex()
+    &__item {
+      col()
+      col-4()
+    }
+
+  }
+  .trend {
+    &__title {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: left;
+      color: brownish-grey;
+      padding-top: 15px;
+      text-transform: uppercase
+    }
+    &__list {
+      display: flex;
+      width: 190px;
+      flex-wrap: wrap;
+    }
+    &__item {
+      padding-left: 10px;
+      padding-right 10px;
+      border-left: 1px solid #f7f7f7;
+      border-right: 1px solid #f7f7f7;
+
+    }
+    &__item:nth-child(1) {
+      padding-left: 0;
+      border-left: none
+
+    }
+
+    &__item:nth-child(3) {
+      padding-right: 0;
+      border-right: none;
+    }
+    &__item:nth-child(4) {
+      padding-left: 0;
+      border-left: none
+    }
+
+    &__item:nth-child(6) {
+      padding-right: 0;
+      border-right: none;
+    }
+
+  }
+
+  .size {
+    &__title {
+      font-size: 14px;
+      font-weight: bold;
+      color: $brownish-grey;
+      text-transform: uppercase
+    }
+    &__list {
+      width: 240px;
+      display: flex;
+      flex-wrap wrap
+    }
+      &__item{
+        padding-right: 20px;
+        padding-bottom:10px;
+
+      }
+  }
+    &__price{
+      .slider{
+        &__line{
+          .ui-rangeSlider .ui-rangeSlider-innerBar{
+
+          }
+
+
+        }
+      }
+
+    }
+
+  &__sort {
+    row-flex();
+    .sortBy {
+      col()
+      col-12()
+    }
+  }
+  .result {
+    row-flex();
+    &__item {
+      col()
+      col-4()
+    }
+  }
+
+  .pagination {
+    row-flex();
+    justify-content(space-between);
+    &__list {
+      col();
+      col-4();
+
+    }
+    &__viewAll {
+      col();
+      col-2();
+    }
+
+  }
+
 }
