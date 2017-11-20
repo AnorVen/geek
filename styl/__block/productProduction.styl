@@ -95,99 +95,187 @@
 
   }
   .productSort {
-    row-flex()
+    display: flex;
+    margin-bottom: 40px;
     &__item {
       col()
       col-4()
     }
 
-  }
-  .trend {
-    &__title {
-      font-size: 14px;
-      font-weight: bold;
-      text-align: left;
-      color: brownish-grey;
-      padding-top: 15px;
-      text-transform: uppercase
-    }
-    &__list {
-      display: flex;
-      width: 190px;
-      flex-wrap: wrap;
-    }
-    &__item {
-      padding-left: 10px;
-      padding-right 10px;
-      border-left: 1px solid #f7f7f7;
-      border-right: 1px solid #f7f7f7;
+    .trend {
+      &__title {
+        font-size: 14px;
+        font-weight: bold;
+        text-align: left;
+        color: brownish-grey;
+        padding-top: 15px;
+        text-transform: uppercase
+      }
+      &__list {
+        display: flex;
+        width: 190px;
+        flex-wrap: wrap;
+      }
+      &__item {
+        padding-left: 10px;
+        padding-right 10px;
+        border-left: 1px solid #f7f7f7;
+        border-right: 1px solid #f7f7f7;
+
+      }
+      &__item:nth-child(1) {
+        padding-left: 0;
+        border-left: none
+
+      }
+
+      &__item:nth-child(3) {
+        padding-right: 0;
+        border-right: none;
+      }
+      &__item:nth-child(4) {
+        padding-left: 0;
+        border-left: none
+      }
+
+      &__item:nth-child(6) {
+        padding-right: 0;
+        border-right: none;
+      }
 
     }
-    &__item:nth-child(1) {
-      padding-left: 0;
-      border-left: none
 
-    }
-
-    &__item:nth-child(3) {
-      padding-right: 0;
-      border-right: none;
-    }
-    &__item:nth-child(4) {
-      padding-left: 0;
-      border-left: none
-    }
-
-    &__item:nth-child(6) {
-      padding-right: 0;
-      border-right: none;
-    }
-
-  }
-
-  .size {
-    &__title {
-      font-size: 14px;
-      font-weight: bold;
-      color: $brownish-grey;
-      text-transform: uppercase
-    }
-    &__list {
-      width: 240px;
-      display: flex;
-      flex-wrap wrap
-    }
-      &__item{
+    .size {
+      &__title {
+        font-size: 14px;
+        font-weight: bold;
+        color: $brownish-grey;
+        text-transform: uppercase
+      }
+      &__list {
+        width: 240px;
+        display: flex;
+        flex-wrap wrap
+      }
+      &__item {
         padding-right: 20px;
-        padding-bottom:10px;
+        padding-bottom: 10px;
 
       }
-  }
-    &__price{
-      .slider{
-        &__line{
-          .ui-rangeSlider .ui-rangeSlider-innerBar{
-
-          }
-
-
+    }
+    &__price {
+      .slider {
+        &__val {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap nowrap;
         }
+        &__title {
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: bold;
+          padding-bottom: 20px;
+        }
+
       }
 
     }
+  }
 
   &__sort {
-    row-flex();
-    .sortBy {
-      col()
-      col-12()
+    display: flex;
+    height: 50px;
+    background-color: #f3f3f3;
+    margin-bottom 50px;
+    &Wrap {
+      col();
+      col-12();
+      display: flex;
+      flex-wrap: nowrap;
     }
+
+    input {
+      font-size: 14px;
+      padding: 10px;
+      height: 30px;
+    }
+    .sortBy {
+      display: flex
+      flex-wrap: nowrap;
+      height: 30px;
+      border: solid 1px #ebebeb;
+      background-color: white;
+      margin-top: 10px;
+      margin-left: 10px;
+      box-sizing border-box
+      &__text {
+        width: 65px;
+        box-sizing border-box
+        font-size: 14px;
+        text-align: center;
+        padding-top: 5px;
+        border-right solid 1px #ebebeb;
+
+      }
+      select {
+        border none;
+      }
+      select:focus, select:hover, select:active {
+        outline none;
+      }
+    }
+    .show {
+      display: flex
+      flex-wrap: nowrap;
+      height: 30px;
+      border: solid 1px #ebebeb;
+      background-color: white;
+      margin-top: 10px;
+      box-sizing border-box
+      margin-left: 10px;
+      &__text {
+        width: 65px;
+        box-sizing border-box
+        font-size: 14px;
+        text-align: center;
+        padding-top: 5px;
+        border-right solid 1px #ebebeb;
+      }
+      select {
+        border none;
+      }
+      select:focus, select:hover, select:active {
+        outline none;
+      }
+    }
+
   }
   .result {
     row-flex();
     &__item {
       col()
       col-4()
+      margin-bottom: 60px;
+
+    }
+    &__text {
+      margin-top 10px;
+      margin-left: 10px;
+      a {
+        display: block
+        padding 5px;
+        font-size: 13px;
+        text-transform: uppercase
+        color: brownish-grey;
+
+      }
+    }
+    &__price {
+      margin-left: 5px;
+      margin-top: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      color: rosy-pink;
     }
   }
 

@@ -14,8 +14,10 @@
 }
 
 .ui-rangeSlider .ui-rangeSlider-handle{
+	top: -3px !important;
 	width:14px;
 	height:14px;
+	border-radius: 50%;
 	background: #f16d7f;
 	cursor:col-resize;
 }
@@ -69,7 +71,7 @@
 }
 
 .ui-rangeSlider-label{
-	display: none;
+	display: none !important;
 	margin:0 2px 2px;
 	background-image:url('icons-classic/label.png');
 	background-position:bottom center;
