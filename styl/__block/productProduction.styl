@@ -1,5 +1,5 @@
 .productProduction {
-  padding-bottom 90px
+  padding-bottom: 110px;
   padding-top: 50px;
 
   &__wrap {
@@ -162,6 +162,17 @@
         padding-bottom: 10px;
 
       }
+      &__label{
+        input{
+          margin-right: 5px;
+          background-color: #fff
+          border solid 1px #ebebeb
+
+        }
+        input:focus{
+          outline none;
+        }
+      }
     }
     &__price {
       .slider {
@@ -258,6 +269,9 @@
       margin-bottom: 60px;
 
     }
+    &__img {
+      width: 100%
+    }
     &__text {
       margin-top 10px;
       margin-left: 10px;
@@ -285,11 +299,35 @@
     &__list {
       col();
       col-4();
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-right: 15px;
+      padding-left: 15px;
 
+      .disabled {
+        cursor: default
+        color #aaaaaa
+      }
+      .current {
+        color medium-pink
+      }
+
+    }
+    &__item {
+      font-size 16px
+      color pinkish-grey
     }
     &__viewAll {
       col();
-      col-2();
+      width: auto
+      padding: 13px 47px;
+      font-size 16px
+      font-weight 300
+      color medium-pink
+      border-radius 3px
+      background-color white
+      border solid 1px medium-pink
     }
 
   }
