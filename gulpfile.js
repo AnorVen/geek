@@ -21,6 +21,8 @@ var sourcemaps = require('gulp-sourcemaps')
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 var csscomb = require('gulp-csscomb');
+var babel = require('gulp-babel');
+
 
 gulp.task("style", function () {
   gulp.src("styl/style.styl")
@@ -109,10 +111,15 @@ gulp.task("html:update", ["html:copy"], function (done) {
 
 gulp.task('js', function () {
   return gulp.src('js/*.js')
+    .pipe(plumber())
     .pipe(sourcemaps.init())
+
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
+    }))
+    .pipe(babel({
+      presets: ['env']
     }))
     //  .pipe(modernizr())
     // .pipe(uglify())
@@ -135,6 +142,7 @@ gulp.task("serve", function () {
   gulp.watch("styl/**/*.css", ["style"]);
   gulp.watch("*.html", ["html:update"]);
   gulp.watch("js/*.js", ["js"]);
+
 });
 
 gulp.task("build", function (fn) {
