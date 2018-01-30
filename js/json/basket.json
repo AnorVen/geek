@@ -1,0 +1,27 @@
+{
+  "result": 1,
+  "basket": [
+    {
+      "id_product": 123,
+      "price": 300,
+      "src": "./img/card__item1.jpg",
+      "title": "Rebox Zane1",
+      "quantity": 1,
+      "stars": 3
+
+
+    },
+    {
+      "id_product": 124,
+      "price": 400,
+      "src": "./img/card__item2.jpg",
+      "title": "Rebox Zane2",
+      "quantity": 2,
+      "stars": 4
+
+
+    }
+
+  ],
+  "amount": 1100
+}
