@@ -247,6 +247,7 @@ class HeaderMenu extends Container{
         dataType: 'json',
         async: false,
         success: function (data) {
+          console.log(data);
           this.id = data.list.id;
           this.className = data.list.class;
           let a = [];
@@ -262,48 +263,55 @@ class HeaderMenu extends Container{
     }
   renderHeaderMenu() {
       console.log(123)
-    let result = '<ul class="'+this.className+'" id="'+this.id+'"></ul>';
-  //  for (let i = 0; i < this.items.length; i++) {
-    for (let item in this.items.length) {
+    let result = '<ul class="'+this.className+'" id="'+this.id+'">';
+  //   for (let item in this.items) {
+    let a = [];
+    for (let i = 0; i < this.items.length; i++) {
+        let itemMenu = '<li class="' + this.items[i].class + '"><a href="' + this.items[i].link + '">' +
+        this.items[i].title + '</a>';
 
-      let itemMenu = '<li class="' + item.class + '"><a href="' + item.link + '">' +
-        item.title + '</a></li>';
-/*
-      if (this.items[i].submenu){
-        let submenu = this.renderSubMenu(this.items[i].submenu);
-        console.log(submenu);
-        item.append(submenu);
+      if (this.items[i].submenu) {
+        let submenu = '<div class="sub-nav">';
+        console.log(this.items[i].submenu);
+
+
+
+        for (let j = 0; j < this.items[i].submenu.length; j++) {
+          let submenuCol = '<div class="' + this.items[i].submenu[j].class + '"><span>' +
+            this.items[i].submenu[j].title + '</span>';
+          console.log(submenuCol);
+
+          for (let k = 0; k < this.items[i].submenu[j].list.length; k++) {
+            submenuCol += '<div class="' + this.items[i].submenu[j].list[k].class + '">' +
+              '<a href="' + this.items[i].submenu[j].list[k].link + '">'
+              + this.items[i].submenu[j].list[k].title + '</a></div>';
+          }
+
+          submenuCol += '</div>';
+          submenu += submenuCol
+        }
+        submenu += '</div>';
+        itemMenu += submenu;
       }
-      console.log(item);
-      console.log(result);
 
-    */
-      console.log(itemMenu);
-     result.append(itemMenu);
 
+      itemMenu += '</li>';
+
+      result += itemMenu;
+
+     console.log(result);
 
     }
+    result += '</ul>';
+    let nav = $('.header__nav');
+    nav.empty();
+    nav.append(result);
 
-    return result;
   }
 
-  /*
-  renderSubMenu(){
-    let res = $('<ul />',{
-      class: this.items['subMenu'].class,
-      text: this.items['subMenu'].title
-    });
 
-      for( let i = 0; i < this.items['submenu'].length; i++ ){
-        for( let j = 0; j < this.items['submenu'].list.length; i++){
-          res.append(123)
 
-        }
-      }
-    return res;
-console.log(res)
-  }
-*/
+
 
 }
 
@@ -431,7 +439,7 @@ $(document).ready(function () {
 
   let headerMenu = new HeaderMenu();
   headerMenu.ajax();
-  headerMenu.renderHeaderMenu();
+ // ;
 
 
 
