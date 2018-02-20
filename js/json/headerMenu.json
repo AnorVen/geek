@@ -1,0 +1,118 @@
+{
+  "list": {
+    "class": "nav__list",
+    "id": "nav__list"
+  },
+  "menuItems": [
+    {
+      "class": "nav__item",
+      "title": "Home",
+      "link": "#",
+      "submenu": false
+
+    },
+    {
+
+      "class": "nav__item",
+      "title": "Man",
+      "link": "#",
+      "submenu": false
+
+    },
+    {
+
+      "class": "nav__item",
+      "title": "Women",
+      "link": "#",
+      "submenu": {
+        "subItem1": [
+          {
+            "category": {
+              "title": "Woman",
+              "class": "sub-nav__item--category"
+            },
+            "list": [
+              {
+                "title": "DRESSES",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "TOPS",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "SWEATERS/KNITS",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "JACKETS/COATS",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "BLAZERS",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "DRESSES",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "DENIM",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "LEGGINGS/PANTS",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "SKIRTS/SHORTS",
+                "link": "#",
+                "class": "sub-nav__item"
+              },
+              {
+                "title": "ACCESSORIES",
+                "link": "#",
+                "class": "sub-nav__item"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "class": "nav__item",
+      "title": "Kids",
+      "link": "#",
+      "submenu": false
+    },
+    {
+      "class": "nav__item",
+      "title": "Accoseriese",
+      "link": "#",
+      "submenu": false
+    },
+    {
+      "class": "nav__item",
+      "title": "Featured",
+      "link": "#",
+      "submenu": false
+
+    },
+    {
+      "class": "nav__item",
+      "title": "Hot Deals",
+      "link": "#",
+      "submenu": false
+    }
+  ]
+}
+
+

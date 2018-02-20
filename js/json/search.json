@@ -1,0 +1,93 @@
+{
+  "list": {
+    "class": "search-select__list",
+    "id": "search-select__list"
+  },
+  "menuItems": [
+    {
+      "class": "search-select__item search-select__item--category",
+      "data": "Women",
+      "name": "Women"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenDresses",
+      "name": "Dresses"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenTops",
+      "name": "Tops"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenSweaters/Knits",
+      "name": "Sweaters/Knits"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenJacketsCoats",
+      "name": "Jackets/Coats"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenBlazers",
+      "name": "Blazers"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenDenim",
+      "name": "Denim"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenLeggingsPants",
+      "name": "Leggings/Pants"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenSkirtsShorts",
+      "name": "Skirts/Shorts"
+    },
+    {
+      "class": "search-select__item",
+      "data": "WomenAccessories",
+      "name": "Accessories"
+    },
+    {
+      "class": "search-select__item search-select__item--category",
+      "data": "Men",
+      "name": "Men"
+    },
+    {
+      "class": "search-select__item",
+      "data": "MenTeesTankTops",
+      "name": "Tees/Tank tops"
+    },
+    {
+      "class": "search-select__item",
+      "data": "MenShirtsPolos",
+      "name": "Shirts/Polos"
+    },
+    {
+      "class": "search-select__item",
+      "data": "MenSweaters",
+      "name": "Sweaters"
+    },
+    {
+      "class": "search-select__item",
+      "data": "MenSweatshirts",
+      "name": "Sweatshirts"
+    },
+    {
+      "class": "search-select__item",
+      "data": "MenBlazers",
+      "name": "Blazers"
+    },
+    {
+      "class": "search-select__item",
+      "data": "MenJacketsVests",
+      "name": "Jackets/vests"
+    }
+  ]
+}

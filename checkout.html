@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkout</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+@@include('./html__blocks/header.html')
+<main class="checkout__main">
+	<section class="newArrivals">
+		<div class="newArrivals__wrap">
+			<div class="newArrivals__title">
+				<p>New Arrivals </p>
+			</div>
+			<div class="newArrivals__menu">
+				<a href="#" class="newArrivals__menu-item">Home </a> /
+				<a href="#" class="newArrivals__menu-item"> Men </a> /
+				<a href="#" class="newArrivals__menu-item newArrivals__menu-item--pink"> New Arrivals</a>
+			</div>
+		</div>
+	</section>
+
+	<section class="delivery">
+		<div class="delivery__wrap">
+			<div class="delivery__item">
+				<input type="radio" name="delivery" id="shippingAderss" value="shippingAderss" checked>
+				<label for="shippingAderss" class="delivery__title">01. Shipping Adress</label>
+				<div class="delivery__shippingAdress">
+					<div class="checkOrReg">
+						<h3 class="checkOrReg__title">Check as a guest or register</h3>
+						<p class="checkOrReg__text">Register with us for future convenience</p>
+						<div class="checkOrReg__register">
+							<label class="checkOrReg__label">
+								<input type="radio" name="register" value="guest">checkout as guest
+							</label>
+							<label class="checkOrReg__label">
+								<input type="radio" name="register" value="register">register
+							</label>
+						</div>
+						<h3 class="checkOrReg__title">register and save time!</h3>
+						<p class="checkOrReg__text">Register with us for future convenience</p>
+
+						<ul class="checkOrReg-adv__list">
+							<li class="checkOrReg-adv__item">
+								<p><i class="fa fa-angle-double-right" aria-hidden="true"></i>Fast and easy checkout</p>
+							</li>
+							<li class="checkOrReg-adv__item">
+								<p><i class="fa fa-angle-double-right" aria-hidden="true"></i>Easy access to your order history and
+									status</p>
+							</li>
+						</ul>
+						<button class="checkOrReg__btn">Continue</button>
+
+
+					</div>
+					<div class="alreadyRegisted">
+						<h3 class="alreadyRegisted__title">Already registed?</h3>
+						<p class="alreadyRegisted__text">Please log in below</p>
+						<label for="" class="alreadyRegisted__label">EMAIL ADDRESS *
+							<input type="text">
+						</label>
+						<label for="" class="alreadyRegisted__label">PASSWORD *
+							<input type="text">
+						</label>
+						<div class="alreadyRegisted__coment">* Required Fileds</div>
+						<button class="alreadyRegisted__btn">Log in</button>
+						<a href="" class="alreadyRegisted__link">Forgot Password?</a>
+
+
+					</div>
+
+
+				</div>
+			</div>
+			<div class="delivery__item">
+				<input type="radio" name="delivery" id="billingInformation" value="billingInformation">
+				<label for="billingInformation" class="delivery__title">02. BILLING INFORMATION</label>
+				<div class="delivery__billingInformation">
+
+				</div>
+			</div>
+			<div class="delivery__item">
+				<input type="radio" name="delivery" id="shippingInformation" value="shippingInformation">
+				<label for="shippingInformation" class="delivery__title">03. SHIPPING INFORMATION</label>
+				<div class="delivery__shippingInformation">
+
+				</div>
+			</div>
+			<div class="delivery__item">
+				<input type="radio" name="delivery" value="shippingMethod" id="shippingMethod">
+				<label for="shippingMethod" class="delivery__title">04. SHIPPING METHOD</label>
+				<div class="delivery__shippingMethod">
+
+				</div>
+			</div>
+			<div class="delivery__item">
+				<input type="radio" name="delivery" value="paymentMethod" id="paymentMethod">
+				<label for="paymentMethod" class="delivery__title">05. PAYMENT METHOD</label>
+				<div class="delivery__paymentMethod">
+
+				</div>
+			</div>
+			<div class="delivery__item">
+				<input type="radio" name="delivery" id="orderReview" value="orderReview">
+				<label for="orderReview" class="delivery__title">06. ORDER REVIEW</label>
+				<div class="delivery__orderReview">
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	@@include('html__blocks/feetback.html')
+</main>
+
+
+@@include('html__blocks/footer.html')
+
+<script src="js/index.js"></script>
+
+</body>
+</html>

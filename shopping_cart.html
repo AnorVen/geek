@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>shopping cart</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+@@include('./html__blocks/header.html')
+
+<main>
+	<section class="newArrivals">
+		<div class="newArrivals__wrap">
+			<div class="newArrivals__title">
+				<p>New Arrivals </p>
+			</div>
+			<div class="newArrivals__menu">
+				<a href="#" class="newArrivals__menu-item">Home </a> /
+				<a href="#" class="newArrivals__menu-item"> Men </a> /
+				<a href="#" class="newArrivals__menu-item newArrivals__menu-item--pink"> New Arrivals</a>
+			</div>
+		</div>
+	</section>
+	<section class="shopping-cart">
+		<div class="cart__wrap">
+			<div class="cart__item cart__title">
+				<div class="title__productDetails">
+					<h3 class="productDetails__title">Product Details</h3>
+				</div>
+				<div class="title__productInfo">
+					<h3 class="info__price">unite Price</h3>
+					<h3 class="info__quantity">Quantity</h3>
+					<h3 class="info__shipping">shipping</h3>
+					<h3 class="info__subtotal">Subtotal</h3>
+					<h3 class="info__action">ACTION</h3>
+				</div>
+
+
+			</div>
+			<div class="cart__item cart__prod">
+				<div class="prod__productDetails">
+					<img src="./img/prod__1.jpg" alt="" class="prod__img" style=" width:100px; height:115px">
+					<div class="prod__options">
+						<h3 class="prod__title">Mango People T-shirt</h3>
+						<p class="prod__color">Color: <span class="prod__color--red">red</span></p>
+						<p class="prod__size">Size: <span class="prod__size--xii">xii</span></p>
+					</div>
+				</div>
+				<div class="prod__info">
+					<div class="info__price">
+						<p>$150</p>
+					</div>
+					<div class="info__quantity">
+						<input type="text" value="2">
+					</div>
+					<div class="info__shipping">
+						<p>FREE</p>
+					</div>
+					<div class="info__subtotal">
+						<p>$300</p>
+					</div>
+					<div class="info__action">
+						<a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i> </a>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="cart__item cart__prod">
+				<div class="prod__productDetails">
+					<img src="./img/prod__2.jpg" alt="" class="prod__img" style=" width:100px; height:115px">
+					<div class="prod__options">
+						<h3 class="prod__title">Mango People T-shirt</h3>
+						<p class="prod__color">Color: <span class="prod__color--red">red</span></p>
+						<p class="prod__size">Size: <span class="prod__size--xii">xii</span></p>
+					</div>
+				</div>
+				<div class="prod__info">
+					<div class="info__price">
+						<p>$150</p>
+					</div>
+					<div class="info__quantity">
+						<input type="text" value="2">
+					</div>
+					<div class="info__shipping">
+						<p>FREE</p>
+					</div>
+					<div class="info__subtotal">
+						<p>$300</p>
+					</div>
+					<div class="info__action">
+						<a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i> </a>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="cart__item cart__prod">
+				<div class="prod__productDetails">
+					<img src="./img/prod__8.jpg" alt="" class="prod__img" style=" width:100px; height:115px">
+					<div class="prod__options">
+						<h3 class="prod__title">Mango People T-shirt</h3>
+						<p class="prod__color">Color: <span class="prod__color--red">red</span></p>
+						<p class="prod__size">Size: <span class="prod__size--xii">xii</span></p>
+					</div>
+				</div>
+				<div class="prod__info">
+					<div class="info__price">
+						<p>$150</p>
+					</div>
+					<div class="info__quantity">
+						<input type="text" value="2">
+					</div>
+					<div class="info__shipping">
+						<p>FREE</p>
+					</div>
+					<div class="info__subtotal">
+						<p>$300</p>
+					</div>
+					<div class="info__action">
+						<a href="#"><i class="fa fa-times-circle" aria-hidden="true"></i> </a>
+					</div>
+				</div>
+
+
+			</div>
+			<div class="cart__btn">
+				<button class="btn__clear">cLEAR SHOPPING CART</button>
+				<button class="btn__continue">cONTINUE sHOPPING<sHOPPING></sHOPPING></button>
+			</div>
+			<div class="cart__shipping">
+				<div class="shippingAdress">
+					<h3 class="shippingAdress__title">Shipping Adress</h3>
+					<form action="#" class="shippingAdress__form">
+						<input type="text" class="shippingAdress__input shippingAdress__input--country" placeholder="Bangladesh">
+						<input type="text" class="shippingAdress__input shippingAdress__input--state" placeholder="State">
+						<input type="text" class="shippingAdress__input shippingAdress__input--zip" placeholder="Postcode / Zip">
+						<button class="shippingAdress__btn" type="submit">get a quote</button>
+					</form>
+				</div>
+				<div class="couponDiscount">
+					<h3 class="couponDiscount__title">coupon  discount</h3>
+					<p class="couponDiscount__text">Enter your coupon code if you have one</p>
+					<form action="#" class="couponDiscount__form">
+						<input type="text" class="couponDiscount__input">
+						<button class="couponDiscount__btn" type="submit">Apply coupon</button>
+					</form>
+				</div>
+				<div class="total">
+					<div class="total__wrap">
+						<p class="total__sub">Sub total  <span class="total__sub--price">$900</span></p>
+						<p class="total__grand">GRAND TOTAL<span class="total__grand--prise">$900</span></p>
+						<a href="#" class="total__link">proceed to checkout</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	@@include('html__blocks/feetback.html')
+</main>
+
+
+@@include('html__blocks/footer.html')
+
+</body>
+</html>
