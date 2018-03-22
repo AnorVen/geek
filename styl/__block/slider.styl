@@ -1,18 +1,13 @@
 .slider {
+  background-color: #e8e8e8;
 
-  &__img {
-    height: 612px;
-    background-color: #e8e8e8;
 
-  }
   &__wrap {
     max-width: 1140px;
     margin: 0 auto;
-    background-image: url(../img/banner.jpg);
-    background-repeat no-repeat;
-    background-position: top right;
-    background-size: 611px 910px;
-    height:100%;
+    display: flex;
+    flex-wrap nowrap;
+    justify-content: left;
   }
   &__text:before {
     content: "";
@@ -21,12 +16,12 @@
     height: 92px;
     background-color: rosy-pink;
     position: absolute;
-    bottom: 10px;
+    top: 20px;
     left: 0;
 
   }
   &__text {
-    padding-top: 205px;
+    margin-top: 205px;
     position: relative;
     padding-left 24px;
     letter-spacing: 1.5px;
@@ -40,5 +35,25 @@
     &--pink {
       color: rosy-pink;
     }
+  }
+  &__view {
+    width: 600px;
+    height: 655px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 655px;
+    margin: 0;
+    padding: 0;
+  }
+  .slide {
+    width: 600px;
+    height: 655px;
+    float: left;
   }
 }
