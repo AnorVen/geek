@@ -11,6 +11,7 @@ class Container {
     this.htmlCode = '';
 
   }
+
   render() {
     return this.htmlCode;
   }
@@ -167,16 +168,15 @@ class Basket extends Container {
     let $basketDataDiv = $('#basket_data');
     $basketDataDiv.empty();
     $basketDataDiv.append('<p class="total-price__text">Всего товаров: ' + this.countGoods + '</p>');
-    $basketDataDiv.append('<p class="total-price__price">Сумма: ' + Math.round(this.amount*100)/100 + '</p>');
+    $basketDataDiv.append('<p class="total-price__price">Сумма: ' + Math.round(this.amount * 100) / 100 + '</p>');
 
 
     let deleteItem = this.delete.bind(this);
     $('.purchase__item').on('click', '.purchase__delite', function () {
       let item = $(this).attr('id').split('-')[1];
       deleteItem(item);
-      });
-      $('.card__img--text').text(this.countGoods);
-
+    });
+    $('.card__img--text').text(this.countGoods);
 
 
   };
@@ -234,46 +234,47 @@ class Basket extends Container {
 }
 
 
-class HeaderMenu extends Container{
-    Constructor(my_id, my_class) {
-      this.id = my_id;
-      this.className = my_class;
-      this.items = [];
-      this.ajax();
-    }
-    ajax(){
-      $.ajax({
-        url: './js/json/headerMenu.json',
-        dataType: 'json',
-        async: false,
-        success: function (data) {
-          console.log(data);
-          this.id = data.list.id;
-          this.className = data.list.class;
-          let a = [];
-          for (let i = 0; i < data.menuItems.length; i++) {
-            a.push(data.menuItems[i]);
+class HeaderMenu extends Container {
+  Constructor(my_id, my_class) {
+    this.id = my_id;
+    this.className = my_class;
+    this.items = [];
+    this.ajax();
+  }
 
-          }
-          this.items = a;
-          this.renderHeaderMenu();
-        },
-        context: this
-      });
-    }
+  ajax() {
+    $.ajax({
+      url: './js/json/headerMenu.json',
+      dataType: 'json',
+      async: false,
+      success: function (data) {
+        console.log(data);
+        this.id = data.list.id;
+        this.className = data.list.class;
+        let a = [];
+        for (let i = 0; i < data.menuItems.length; i++) {
+          a.push(data.menuItems[i]);
+
+        }
+        this.items = a;
+        this.renderHeaderMenu();
+      },
+      context: this
+    });
+  }
+
   renderHeaderMenu() {
-      console.log(123)
-    let result = '<ul class="'+this.className+'" id="'+this.id+'">';
-  //   for (let item in this.items) {
+    console.log(123)
+    let result = '<ul class="' + this.className + '" id="' + this.id + '">';
+    //   for (let item in this.items) {
     let a = [];
     for (let i = 0; i < this.items.length; i++) {
-        let itemMenu = '<li class="' + this.items[i].class + '"><a href="' + this.items[i].link + '">' +
+      let itemMenu = '<li class="' + this.items[i].class + '"><a href="' + this.items[i].link + '">' +
         this.items[i].title + '</a>';
 
       if (this.items[i].submenu) {
         let submenu = '<div class="sub-nav">';
         console.log(this.items[i].submenu);
-
 
 
         for (let j = 0; j < this.items[i].submenu.length; j++) {
@@ -299,7 +300,7 @@ class HeaderMenu extends Container{
 
       result += itemMenu;
 
-     console.log(result);
+      console.log(result);
 
     }
     result += '</ul>';
@@ -308,9 +309,6 @@ class HeaderMenu extends Container{
     nav.append(result);
 
   }
-
-
-
 
 
 }
@@ -342,10 +340,7 @@ class MenuItem extends HeaderMenu{
 */
 
 
-
-
-
-class Products extends Container{
+class Products extends Container {
   Constructor(my_id, my_class) {
     this.id = my_id;
     this.className = my_class;
@@ -371,24 +366,23 @@ class Products extends Container{
  */
     let result = $('.product');
     result.empty();
-    if(!result.hasClass('product__list')){
+    if (!result.hasClass('product__list')) {
       result.addClass('product__list')
     }
 
 
-
-    for(let j = 0; j < this.items.length; j++){
-      let product__item = $('<div />',{
+    for (let j = 0; j < this.items.length; j++) {
+      let product__item = $('<div />', {
         class: 'product__item'
       });
 
-      product__item.append('<img src="' + this.items[j].src +  '" alt="' + this.items[j].title + '" class="product__img" width="261" height="280"> <a href="#" class="product__link"><p class="product__text">' + this.items[j].title + '</p></a>' +
-       '<p class="product__price">$' + this.items[j].price + '</p> ' +
-       ' <div class="product__shadow"><button class="product__btn" id="id_product-' + this.items[j].id_item +'">'+
-       '<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24">' +
-       '<defs><style> .cls-1 {fill: #fff; stroke: #fff; stroke-linejoin: round; stroke-width: 0px;' +
-       'fill-rule: evenodd;}</style>\</defs><path id="Forma_1_copy" data-name="Forma 1 copy" class="cls-1"' + ' d="M898.851,2004.79h2.438l3.474,13.25a0.862,0.862,0,0,0,.823.65h10.676a0.852,0.852,0,0,0,.78-0.54l3.885-9.41a0.941,0.941,0,0,0-.071-0.85,0.827,0.827,0,0,0-.709-0.41h-11.8a0.9,0.9,0,0,0,0,1.8h10.492l-3.148,7.62h-9.471l-3.474-13.24a0.86,0.86,0,0,0-.822-0.66h-3.077A0.9,0.9,0,0,0,898.851,2004.79Zm5.926,20.21a2.038,2.038,0,1,0-1.928-2.03A1.983,1.983,0,0,0,904.777,2025Zm12.053,0h0.141a1.865,1.865,0,0,0,1.319-.7,2.117,2.117,0,0,0,.468-1.48,1.976,1.976,0,0,0-2.056-1.89,2.015,2.015,0,0,0-1.787,2.17A1.982,1.982,0,0,0,916.83,2025Z" transform="translate(-897 -2002)"/></svg>' +
-       'Add to Cart</button></div>');
+      product__item.append('<img src="' + this.items[j].src + '" alt="' + this.items[j].title + '" class="product__img" width="261" height="280"> <a href="#" class="product__link"><p class="product__text">' + this.items[j].title + '</p></a>' +
+        '<p class="product__price">$' + this.items[j].price + '</p> ' +
+        ' <div class="product__shadow"><button class="product__btn" id="id_product-' + this.items[j].id_item + '">' +
+        '<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24">' +
+        '<defs><style> .cls-1 {fill: #fff; stroke: #fff; stroke-linejoin: round; stroke-width: 0px;' +
+        'fill-rule: evenodd;}</style>\</defs><path id="Forma_1_copy" data-name="Forma 1 copy" class="cls-1"' + ' d="M898.851,2004.79h2.438l3.474,13.25a0.862,0.862,0,0,0,.823.65h10.676a0.852,0.852,0,0,0,.78-0.54l3.885-9.41a0.941,0.941,0,0,0-.071-0.85,0.827,0.827,0,0,0-.709-0.41h-11.8a0.9,0.9,0,0,0,0,1.8h10.492l-3.148,7.62h-9.471l-3.474-13.24a0.86,0.86,0,0,0-.822-0.66h-3.077A0.9,0.9,0,0,0,898.851,2004.79Zm5.926,20.21a2.038,2.038,0,1,0-1.928-2.03A1.983,1.983,0,0,0,904.777,2025Zm12.053,0h0.141a1.865,1.865,0,0,0,1.319-.7,2.117,2.117,0,0,0,.468-1.48,1.976,1.976,0,0,0-2.056-1.89,2.015,2.015,0,0,0-1.787,2.17A1.982,1.982,0,0,0,916.83,2025Z" transform="translate(-897 -2002)"/></svg>' +
+        'Add to Cart</button></div>');
 
       result.append(product__item);
 
@@ -426,8 +420,6 @@ class Products extends Container{
 }
 
 
-
-
 $(document).ready(function () {
   let searchList = new SearchSelectList();
   searchList.ajax();
@@ -439,11 +431,7 @@ $(document).ready(function () {
 
   let headerMenu = new HeaderMenu();
   headerMenu.ajax();
- // ;
-
-
-
-
+  // ;
 
 
   let basket = new Basket();
@@ -452,14 +440,14 @@ $(document).ready(function () {
   $('.product__btn').on('click', function () {
     let idProduct = parseInt($(this).attr('id').split('-')[1]);
     let price = parseFloat($(this).parents('.product__item').find('.product__price').text()
-      .replace(/[^\d.]/g,""));
+      .replace(/[^\d.]/g, ""));
     let src = $(this).parents('.product__item').find('.product__img').attr('src');
     let title = $(this).parents('.product__item').find('.product__text').text();
-    let stars =  parseInt($(this).attr('data-stars')) || 5;
+    let stars = parseInt($(this).attr('data-stars')) || 5;
     let quantity = 1;
 
 
-   basket.add(idProduct, quantity, price, src, title, stars)
+    basket.add(idProduct, quantity, price, src, title, stars)
     // console.log(idProduct, quantity, price, src, title, stars);
 
   });
@@ -470,45 +458,109 @@ $(document).ready(function () {
   });
 
 
-
-  let slideWidth=600;
+  let slideWidth = 600;
   let sliderTimer;
   let slideTime = 2000;
   let slider__img = $('.slider__img');
   let a_slider = slider__img.children().length;
 
 
-$(function () {
-  console.log(a_slider);
-  slider__img.width(a_slider * slideWidth);
-  sliderTimer=setInterval(nextSlide, slideTime);
+  $(function () {
+    slider__img.width(a_slider * slideWidth);
+    sliderTimer = setInterval(nextSlide, slideTime);
+    $('.slider__view').on('hover', function () {
+      clearInterval(sliderTimer);
+    }).mouseleave(function () {
+      sliderTimer = setInterval(nextSlide, slideTime);
+    });
 
+  });
 
-
-
-
-});
   function nextSlide(){
-    console.log('nextSlide');
+ // console.log('11');
     let currentSlide = parseInt(slider__img.data('current'));
     currentSlide++;
-    if(currentSlide>= a_slider)
-    {
-      slider__img.css('left',-(currentSlide-2)*slideWidth);
+    if (currentSlide >= a_slider) {
+      slider__img.css('left', -(currentSlide - 2) * slideWidth);
       slider__img.append(slider__img.children().first().clone());
       slider__img.children().first().remove();
       currentSlide--;
     }
-    slider__img.animate({left: -currentSlide*slideWidth},300).data('current',currentSlide);
+    slider__img.animate({left: -currentSlide * slideWidth}, 300).data('current', currentSlide);
 
 
   }
 
+  let regExpMail = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/i;
 
 
+  $('.subscribe__form').on('submit', function () {
+    prevent.default();
+    if (regExpMail.test(this.children('[name=mail]'))) {
+      console.log('мыло');
+      return true;
+    } else {
+      this.appendChild('<p> почта введена не верно </p>');
+      return false
+    }
 
 
+  })
 
+  function showError(container, errorMessage) {
+    container.className = 'error';
+    var msgElem = document.createElement('span');
+    msgElem.className = "error-message";
+    msgElem.innerHTML = errorMessage;
+    container.appendChild(msgElem);
+  }
+
+  function resetError(container) {
+    container.className = '';
+    if (container.lastChild.className == "error-message") {
+      container.removeChild(container.lastChild);
+    }
+  }
+
+  function validate(form) {
+    var elems = form.elements;
+
+    resetError(elems.from.parentNode);
+    if (!elems.from.value) {
+      showError(elems.from.parentNode, ' Укажите от кого.');
+
+
+      console.log(1)
+      return false
+    }
+
+    resetError(elems.password.parentNode);
+    if (!elems.password.value) {
+      showError(elems.password.parentNode, ' Укажите пароль.');
+      console.log(2)
+      return false
+    } else if (elems.password.value != elems.password2.value) {
+      showError(elems.password.parentNode, ' Пароли не совпадают.');
+      console.log(3)
+      return false
+    }
+
+    resetError(elems.to.parentNode);
+    if (!elems.to.value) {
+      showError(elems.to.parentNode, ' Укажите, куда.');
+      console.log(4)
+      return false
+    }
+
+    resetError(elems.message.parentNode);
+    if (!elems.message.value) {
+      showError(elems.message.parentNode, ' Отсутствует текст.');
+      console.log(5)
+      return false
+    }
+    console.log(6)
+
+  }
 
 
 });
