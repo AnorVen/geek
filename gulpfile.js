@@ -140,6 +140,7 @@ gulp.task("serve", function () {
 
   gulp.watch("styl/**/*.styl", ["style"]);
   gulp.watch("styl/**/*.css", ["style"]);
+  gulp.watch("html__blocks/*.html", ["html:update"]);
   gulp.watch("*.html", ["html:update"]);
   gulp.watch("js/*.js", ["js"]);
 
