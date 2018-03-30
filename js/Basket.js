@@ -29,6 +29,7 @@ class Basket extends Container {
 
         }
         this.basketItems = a;
+
         this.render(root);
         this.refresh();
       },
@@ -93,7 +94,7 @@ class Basket extends Container {
         stars++
       }
       if(stars <=5){
-        for(let i = 5 - stars; i <=5; i++ ){
+        for(let k = 5 - stars; k >0; k-- ){
           let star1 = $('<i />', {
             class: "fa fa-star-o",
             ariaHidden: 'true'
