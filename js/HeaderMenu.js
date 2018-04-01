@@ -76,8 +76,19 @@ class HeaderMenu extends Container {
     let nav = $('.header__nav');
     nav.empty();
     nav.append(result);
-
   }
+  ___________________________
+  //пример многоуровнего меню
+  Menu.prototype.render = function() {
+  var result = '<ul class="'+this.className+'" id="'+this.id+'">';
+  for (var item in this.items) {
+    if (this.items[item] instanceof MenuItem || this.items[item] instanceof SubMenu) {
+      result += this.items[item].render();
+    }
+  }
+  result += '</ul>';
+  return result;
+}
 
 
 }*/
