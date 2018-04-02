@@ -93,8 +93,8 @@ class Basket extends Container {
         $("#purchase__reiting" + i).append(star);
         stars++
       }
-      if(stars <=5){
-        for(let k = 5 - stars; k >0; k-- ){
+      if (stars <= 5) {
+        for (let k = 5 - stars; k > 0; k--) {
           let star1 = $('<i />', {
             class: "fa fa-star-o",
             ariaHidden: 'true'
@@ -110,14 +110,13 @@ class Basket extends Container {
     let basketLink = $('#card__link');
     $basketDataDiv.empty();
     basketLink.empty();
-    if(this.countGoods != 0){
+    if (this.countGoods != 0) {
 
       basketLink.append('<div class="card__checkout"><a href="#">Перейти к оплате</a></div><div class="card__go-to-card"><a href="#">Перейти в карзину</a></div>');
     }
 
     $basketDataDiv.append('<p class="total-price__text">Всего товаров: ' + this.countGoods + '</p>');
     $basketDataDiv.append('<p class="total-price__price">Сумма: ' + Math.round(this.amount * 100) / 100 + '</p>');
-
 
 
     let deleteItem = this.delete.bind(this);
@@ -151,17 +150,17 @@ class Basket extends Container {
       "stars": stars
 
     };
-let a = false;
+    let flag = true;
     for (let i = 1; i <= quantity; i++) {
 
-    for( let j = 0; j < this.basketItems.length; j++){
-      if(basketItems.id_product == this.basketItems[j].id_product ){
-        a = true;
-        this.basketItems[j].quantity++;
+      for (let j = 0; j < this.basketItems.length; j++) {
+        if (basketItems.id_product == this.basketItems[j].id_product) {
+          flag = false;
+          this.basketItems[j].quantity++;
 
+        }
       }
-      }
-      if(!a){
+      if (flag) {
         this.basketItems.push(basketItems);
       }
 

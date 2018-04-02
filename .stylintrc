@@ -1,0 +1,6 @@
+// Comments rock!
+{
+	"colons": "always",
+	"semicolons": "always",
+	"zeroUnits": true
+}

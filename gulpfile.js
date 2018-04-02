@@ -22,6 +22,7 @@ var stylus = require('gulp-stylus');
 var nib = require('nib');
 var csscomb = require('gulp-csscomb');
 var babel = require('gulp-babel');
+var stylint = require('gulp-stylint');
 
 
 gulp.task("style", function () {
@@ -33,6 +34,8 @@ gulp.task("style", function () {
       'include css': true,
       linenos: true
     }))
+    .pipe(stylint())
+    .pipe(stylint.reporter())
     .pipe(gcmq())
     .pipe(postcss([
       autoprefixer({

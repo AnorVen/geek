@@ -17,7 +17,7 @@ class Products extends Container {
 
     for (let j = 0; j < this.items.length; j++) {
       let product__item = $('<div />', {
-        class: 'product__item'
+        class: 'product__item ui-widget-content'
       });
 
       product__item.append('<img src="' + that.items[j].src + '" alt="' + that.items[j].title + '" class="product__img" width="261" height="280"> <a href="#" class="product__link"><p class="product__text">' + that.items[j].title + '</p></a>' +
@@ -29,6 +29,7 @@ class Products extends Container {
         'Add to Cart</button></div>');
 
       result.append(product__item);
+      product__item.draggable();
 
     }
     return result;
@@ -57,6 +58,7 @@ class Products extends Container {
 */
         this.render();
       },
+
       context: this
     });
   }
