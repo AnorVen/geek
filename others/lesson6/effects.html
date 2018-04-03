@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Effects</title>
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/base/all.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/cupertino/jquery-ui.min.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/cupertino/theme.css">
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#btn1').on('click', function () {
+                $('#container').hide($('#effect').val(), {}, 2000);
+            });
+
+            $('#btn2').on('click', function () {
+                $('#container').show($('#effect').val(), {}, 2000);
+            });
+        });
+    </script>
+    <style>
+        #container {
+            background-color: orange;
+            border: 1px solid orangered;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+<div id="container"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias, amet beatae
+    consequuntur cum cupiditate dignissimos dolorem eaque fugit inventore ipsa minima nobis officia quidem quis rerum
+    sit tempore unde.</p>
+    <p>Dicta ducimus eius facere non numquam perspiciatis praesentium quia. A accusantium adipisci architecto commodi,
+        cum fuga fugiat, iste magni nihil officia perferendis quae quibusdam quod temporibus, tenetur totam ullam
+        voluptatem!</p></div>
+<label for="effect">Выберите эффект из списка</label>
+<select name="effect" id="effect">
+    <option value="blind">Ослепление</option>
+    <option value="bounce">Подпрыгивание</option>
+    <option value="clip">Обрезание</option>
+    <option value="drop">Падение</option>
+    <option value="explode">Взрыв</option>
+    <option value="fade">Исчезновение</option>
+    <option value="fold">Складывание</option>
+    <option value="highlight">Подсветка</option>
+    <option value="puff">Рассеивание</option>
+    <option value="pulsate">Пульсирование</option>
+    <option value="shake">Встряска</option>
+    <option value="slide">Выскальзывание</option>
+</select>
+<p>Выберите желаемое действие:</p>
+<button id="btn1">Скрыть элемент</button>
+<button id="btn2">Показать элемент</button>
+</body>
+</html>
