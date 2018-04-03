@@ -31,3 +31,17 @@ $(function () {
   }, slideTime);
 
 });
+
+
+$('.slider__single').owlCarousel({
+  nav: false,
+  loop: true,
+  items: 3,
+  dots: false
+});
+$('.also__prod').owlCarousel({
+  loop:true,
+  items: 4,
+  autoplay: true,
+  margin: 30
+});

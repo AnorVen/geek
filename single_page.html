@@ -13,7 +13,7 @@
 
 @@include('./html__blocks/header.html')
 
-<main>
+<main class="main">
 	<section class="newArrivals">
 		<div class="newArrivals__wrap">
 			<div class="newArrivals__title">
@@ -26,15 +26,24 @@
 			</div>
 		</div>
 	</section>
-	<section class="slider">
-		<img src="./img/slider__slid.jpg" alt="" class="slider__img" width="597" height="724">
-		<div class="slider__next"></div>
-		<div class="slider__prew"></div>
+	<section class="slider__single owl-carousel owl-theme">
+		<div>
+			<img src="./img/slider__slid.jpg" alt="" class="slider__single__img product__img">
+		</div>
+		<div>
+			<img src="./img/banner.jpg" alt="" class="slider__single__img">
+		</div>
+		<div>
+			<img src="./img/slider__slid.jpg" alt="" class="slider__single__img">
+		</div>
+		<div>
+		<img src="./img/banner.jpg" alt="" class="slider__single__img">
+	</div>
 
 	</section>
 	<section class="info">
-		<p class="info__title">WOMEN COLLECTION</p>
-		<div class="info__line"></div>
+		<p class="info__collection">WOMEN COLLECTION</p>
+		<div class="info__article"></div>
 		<h3 class="info__title">Moschino Cheap And Chic</h3>
 		<p class="info__text">Compellingly actualize fully researched processes before proactive outsourcing. Progressively
 			syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core
@@ -47,17 +56,16 @@
 		</div>
 		<p class="info__price">$561</p>
 		<div class="info__choose">
-			<forn>
-				<div class="choose__color">CHOOSE COLOR</div>
+					<div class="choose__color">CHOOSE COLOR</div>
 				<div class="choose__color">CHOOSE SIZE</div>
-				<div class="choose__quantity">QUANTITY</div>
-				<button class="choosr__btn" type="submit">Add to Cart</button>
-			</forn>
+				<input type="text" class="choose__quantity" placeholder="1">
 		</div>
+		<button class="choosr__btn" type="submit" id="id_product-25" data-stars="2">Add to Cart</button>
+
 	</section>
 	<section class="also">
 		<h4 class="also__title">you may like also</h4>
-		<div class="also__prod">
+		<div class="also__prod owl-carousel owl-theme">
 			<div class="also__item">
 				<a href="">
 					<img src="./img/1.jpg" alt="">
@@ -86,6 +94,22 @@
 					<p class="also__prise">$52.00</p>
 				</a>
 			</div>
+		</div>
+	</section>
+
+	<section class="product-feetback">
+		<div id="comments" class="comments"></div>
+		<div class="comment-input">
+			<label for="name">Представтесь</label><input type="text" id="name" name="name" placeholder="Ваше Имя">
+			<textarea name="comment-input" id="comment-input" placeholder="Ваши ощущения от этого товара"></textarea>
+			<select name="stars" id="single-stars">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option selected>5</option>
+			</select>
+			<button id="add-comment">Добавить комментарий</button>
 		</div>
 	</section>
 

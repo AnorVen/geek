@@ -5,6 +5,7 @@
 @@include('./Basket.js')
 @@include('./HeaderMenu.js')
 @@include('./Products.js')
+@@include('./comment.js')
 
 
 $(document).ready(function () {
@@ -55,6 +56,22 @@ function addToCard() {
     // console.log(idProduct, quantity, price, src, title, stars);
 
   }
+
+  function addToCardSingle() {
+    console.log(1);
+    let idProduct = parseInt($(this).attr('id').split('-')[1]);
+    let price = parseFloat($(this).parents('.info').find('.info__price').text()
+      .replace(/[^\d.]/g, ""));
+    let src = $(this).parents('.main').find('.product__img').attr('src');
+    let title = $(this).parents('.info').find('.info__title').text();
+    let stars = parseInt($(this).attr('data-stars')) || 5;
+    let quantity = $(this).parents('.info').find('input.choose__quantity').val() || 1;
+
+
+    basket.add(idProduct, quantity, price, src, title, stars)
+    // console.log(idProduct, quantity, price, src, title, stars);
+
+  }
    /* function addToCard(e) {
     console.log(1);
     let idProduct = parseInt($(e.target).attr('id').split('-')[1]);
@@ -72,6 +89,8 @@ function addToCard() {
   }*/
 
   $('body').on('click', '.product__btn', addToCard);
+  $('body').on('click', '.choosr__btn', addToCardSingle);
+  $('body').on('click', '.result__btn', addToCard);
 
 
 
@@ -101,6 +120,14 @@ function addToCard() {
         drop: this.addToCard
 
       })
+
+
+
+
+      window.addEventListener('load', () => {
+        const comments = new Comments('#comments', '#add-comment', '#add-comment');
+      });
+
 
 @@include('./validations.js')
 
