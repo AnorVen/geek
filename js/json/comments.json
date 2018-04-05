@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "text": "Lorem ipsum text...",
+    "date" : "2015-02-15 14:58",
+    "liked": true
+  },
+  {
+    "id": 2,
+    "text": "Lorem ipsum text...",
+    "date" : "2015-07-15 15:05",
+    "liked": false    
+  },
+  {
+    "id": 3,
+    "text": "Lorem ipsum text...",
+    "date" : "2015-07-17 15:36",
+    "liked": false    
+  },
+  {
+    "id": 4,
+    "text": "Lorem ipsum text...",
+    "date" : "2016-11-15 19:02",
+    "liked": true    
+  },
+  {
+    "id": 5,
+    "text": "Lorem ipsum text...",
+    "date" : "2017-08-25 08:58",
+    "liked": false    
+  }
+]

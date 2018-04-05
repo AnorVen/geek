@@ -41,7 +41,7 @@ $(document).ready(function () {
   //$('.product__btn').on('click', function () {
 
 
-function addToCard() {
+  function addToCard() {
     console.log(1);
     let idProduct = parseInt($(this).attr('id').split('-')[1]);
     let price = parseFloat($(this).parents('.product__item').find('.product__price').text()
@@ -72,65 +72,68 @@ function addToCard() {
     // console.log(idProduct, quantity, price, src, title, stars);
 
   }
-   /* function addToCard(e) {
-    console.log(1);
-    let idProduct = parseInt($(e.target).attr('id').split('-')[1]);
-    let price = parseFloat($(e.target).parents('.product__item').find('.product__price').text()
-      .replace(/[^\d.]/g, ""));
-    let src = $(e.target).parents('.product__item').find('.product__img').attr('src');
-    let title = $(e.target).parents('.product__item').find('.product__text').text();
-    let stars = parseInt($(e.target).attr('data-stars')) || 5;
-    let quantity = 1;
+
+  /* function addToCard(e) {
+   console.log(1);
+   let idProduct = parseInt($(e.target).attr('id').split('-')[1]);
+   let price = parseFloat($(e.target).parents('.product__item').find('.product__price').text()
+     .replace(/[^\d.]/g, ""));
+   let src = $(e.target).parents('.product__item').find('.product__img').attr('src');
+   let title = $(e.target).parents('.product__item').find('.product__text').text();
+   let stars = parseInt($(e.target).attr('data-stars')) || 5;
+   let quantity = 1;
 
 
-    basket.add(idProduct, quantity, price, src, title, stars)
-    // console.log(idProduct, quantity, price, src, title, stars);
+   basket.add(idProduct, quantity, price, src, title, stars)
+   // console.log(idProduct, quantity, price, src, title, stars);
 
-  }*/
+ }*/
 
   $('body').on('click', '.product__btn', addToCard);
   $('body').on('click', '.choosr__btn', addToCardSingle);
   $('body').on('click', '.result__btn', addToCard);
 
 
+  $('.product__item').draggable({
+      addClasses: false,
+      revert: true,
+      stack: ".product__item",
+      start: function () {
+        $(this).css({'transform': 'scale(0.5)'})
 
+      },
+      stop: function () {
+        $(this).css({'transform': 'scale(1)'})
+        $(this).addToCard();
 
-      $('.product__item').draggable(
-        {
-          addClasses: false,
-          revert: true,
-          stack: ".product__item",
-          start: function () {
-            $(this).css({'transform': 'scale(0.5)'})
+      }
+    });
+  $(".droppable").droppable({
+    accept: ".product__item",
+    classes: {
+      "ui-droppable-active": "ui-state-active",
+      "ui-droppable-hover": "ui-state-hover"
+    },
+    drop: this.addToCard
 
-          },
-          stop: function () {
-            $(this).css({'transform': 'scale(1)'})
-            $(this).addToCard();
-
-          }
-        }
-      );
-      $( ".droppable" ).droppable({
-        accept: ".product__item",
-        classes: {
-          "ui-droppable-active": "ui-state-active",
-          "ui-droppable-hover": "ui-state-hover"
-        },
-        drop: this.addToCard
-
-      })
+  });
 
 
 
 
-      window.addEventListener('load', () => {
-        const comments = new Comments('#comments', '#add-comment', '#add-comment');
-      });
+
+    let comments = $('div').is('#comments');
+    if(comments){
+      new Comments('#comments', '#add-comment',
+        '#comment-input', '#single-stars', '#comments-name');
+    }
+
+
 
 
 @@include('./validations.js')
 
 @@include('./sliders.js')
+
 });
 

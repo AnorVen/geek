@@ -11,18 +11,14 @@
 
 
 
-
-
-
-
-
 class Comment {
-  constructor(id, text, date, liked = false, stars) {
+  constructor(id, text, date, liked = false, stars, name) {
     this.id = id;
     this.text = text;
     this.date = date;
     this.liked = liked;
     this.stars = stars || 5;
+    this.name = name || 'Ананаимус'
   }
   getHTML() {
     let commentContainer = document.createElement('div');
@@ -54,39 +50,48 @@ class Comment {
     btnContainer.appendChild(like);
     btnContainer.appendChild(remove);
 
-    let stars = $('<div />', {
-      id: 'product__stars',
-      class: 'product__stars'
-    });
+    let stars = document.createElement('div');
+    stars.classList.add('product_stars');
     let star_text;
     star_text = document.createElement('p');
-    text.classList.add('text');
-    text.textContent = this.stars;
+    star_text.classList.add('text');
+    star_text.textContent = this.stars;
+    stars.appendChild(star_text);
 
-    star_text.appendTo(stars);
+
+    let name = document.createElement('p');
+    name.classList.add('name');
+    name.textContent = this.name;
+
+    textContainer.appendChild(name);
 
 
+
+    commentContainer.appendChild(textContainer);
 
     commentContainer.appendChild(stars);
-    commentContainer.appendChild(textContainer);
     commentContainer.appendChild(btnContainer);
     return commentContainer;
   }
 }
 
 class Comments {
-  constructor(idComments, idBtnAdd, idTextComment) {
+  constructor(idComments, idBtnAdd, idTextComment, idStar, idName) {
     this.id = idComments;
     this.newTextComment = idTextComment;
+    this.idStar = idStar;
+    this.idName = idName;
+
     this.commentsItem = [];
     this._collectComments();
     document.querySelector(idBtnAdd).addEventListener('click', () => this.add());
     document.querySelector(this.id).addEventListener('click', e => this.remove(e));
     document.querySelector(this.id).addEventListener('click', e => this.like(e));
   }
+ // document.querySelector('#single-stars').value
   _collectComments() {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', './comments.json', true);
+    xhr.open('GET', './js/json/comments.json', true);
     xhr.onreadystatechange = () => {
       if(xhr.readyState !== 4) {
         return;
@@ -96,7 +101,8 @@ class Comments {
       } else {
         let comments = JSON.parse(xhr.responseText);
         comments.forEach(elem => {
-          this.commentsItem.push(new Comment(elem.id, elem.text, elem.date, elem.liked));
+          this.commentsItem.push(new Comment(elem.id, elem.text, elem.date,
+                                      elem.liked, elem.stars, elem.name ));
         });
         this.render();
       }
@@ -111,7 +117,9 @@ class Comments {
   }
   add() {
     let id = this._getIdOfComment();
-    this.commentsItem.push(new Comment(id, document.querySelector(this.newTextComment).value, this._getDateComment()));
+    this.commentsItem.push(new Comment(id, document.querySelector(this.newTextComment).value,
+      this._getDateComment(), '', document.querySelector(this.idStar).value,
+      document.querySelector(this.idName).value));
     this.render();
   }
   remove(e) {
