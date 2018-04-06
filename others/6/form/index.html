@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Form Validation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jquery/css/all.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+  <div class="input-form">
+    <form id="input-form" action="script.php" method="POST">
+      <input id="name" type="text" placeholder="Name">
+      <div class="error error-name">
+        Длина имени может быть от 1 до 50 символов, и содержать символы A-z, А-я.
+        Например: Darth Revan, Дарт Реван
+      </div>
+      <input id="phone" type="text" placeholder="Phone">
+      <div class="error error-phone">
+        Телефон имеет формат +7(000)000-0000
+      </div>
+      <input id="e-mail" type="text" placeholder="E-mail">
+      <div class="error error-email">
+        Email должен иметь вид типа: mail.mail.mail@mail.mail.ru, mail553@mail.mail.com, mail@mail.ru
+      </div>
+      <input id="date" type="text" placeholder="07.07.2017">
+      <div class="error error-date">
+        Обязательно к заполнению
+      </div>
+      <textarea name="inputArea" id="inputArea"></textarea>
+      <div class="error error-area">
+        Обязательно к заполнению
+      </div>
+      <input type="submit" id="input-button" value="Submit">
+    </form>
+  </div>
+  <script src="jquery/jquery.min.js"></script>
+  <script src="jquery/jquery-ui.min.js"></script>
+  <script src="main.js"></script>  
+</body>
+</html>

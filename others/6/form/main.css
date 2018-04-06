@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(70, 70, 70, 0.8);
+  font-family: Arial, sans-serif
+}
+.input-form {
+  width: 500px;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+  border-radius: 15px;
+  padding: 20px;
+}
+.input-form form {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.input-form form input, .input-form form textarea {
+  margin: 20px 0;
+  width: 460px; 
+  font-size: 20px;
+  padding: 10px;
+  outline: none;
+  border: 2px solid rgb(130, 130, 130);
+  border-radius: 5px;
+}
+.input-form form textarea {
+  height: 200px;
+}
+.input-form form input[type="submit"] {
+  background: rgb(130, 130, 130);
+  color: #fff;
+  transition-property: color;
+  transition: 0.25s ease;
+}
+.input-form form input[type="submit"]:hover {
+  background: rgb(255, 253, 253);
+  color: rgb(130, 130, 130);
+}
+.input-form form input[type="submit"]:active {
+  background: rgb(130, 130, 130);
+  color: #fff;
+}
+.error {
+  display: none;
+  margin: 0 20px;
+  font-size: 12px;
+  color: red;
+}
+.error p {
+  margin: 0;
+}
+.input-form form .error-inp {
+  border: 2px solid rgb(255, 0, 0);
+}
+.ui-dialog-titlebar {
+  display: none;
+}
+.ui-dialog {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  line-height: 1;
+}

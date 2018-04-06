@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Главная",
+    "href": "./index.html"
+  },
+  {
+    "id": 2,
+    "title": "Отзывы о магазине",
+    "href": "reviews.html"
+  },
+  {
+    "id": 3,
+    "title": "Контакты",
+    "href": "contacts.html"
+  }
+]

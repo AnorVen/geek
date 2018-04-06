@@ -23,6 +23,7 @@ var nib = require('nib');
 var csscomb = require('gulp-csscomb');
 var babel = require('gulp-babel');
 var stylint = require('gulp-stylint');
+const eslint = require('gulp-eslint');
 
 
 gulp.task("style", function () {
@@ -125,6 +126,18 @@ gulp.task('js', function () {
     .pipe(babel({
       presets: ['env']
     }))
+   /* .pipe(eslint({
+      globals: [
+        'jQuery',
+        '$'
+      ],
+      envs: [
+        'browser'
+      ]
+    }))
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError())
+    */
     //  .pipe(modernizr())
     // .pipe(uglify())
     .pipe(sourcemaps.write())

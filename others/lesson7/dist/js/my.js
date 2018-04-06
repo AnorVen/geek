@@ -1,0 +1,1 @@
+function message(e){console.log("message(text)",e)}message("Text 1"),message("Text 2"),message("Text 3"),message("Text 4"),message("Text 5"),message("Text 6"),message("Text 7"),console.log(111),console.log(111);

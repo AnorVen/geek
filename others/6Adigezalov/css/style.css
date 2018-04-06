@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: "RobotoRegular";
+    font-size: 14px;
+    color: #222;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    padding: 5px;
+}
+
+button:focus {
+    outline: none;
+}
+
+ul {
+    margin: 0;
+}
+.navbar {
+    margin-bottom: 0;
+}
+
+.nav > li > a:focus,
+.nav > li > a:hover,
+.nav > li > a:active,
+.nav .open > a,
+.nav .open > a:focus,
+.nav .open > a:hover {
+    background-color: transparent;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.header__container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.header__logo_text {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.header__cart .dropdown-menu,
+.header__account .dropdown-menu {
+    right: 15px;
+    left: auto;
+}
+
+.header__cart_btn,
+.header__account_btn {
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+    color: #3277cc;
+}
+
+.header__cart_btn:hover,
+.header__account_btn:hover {
+    color: #e78131;
+}
+
+.cart_go_to {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.cart_go_to button {
+    width: 100%;
+}
+
+.menu__top_link {
+    color: #ccc;
+}
+
+.menu__top_link:hover {
+    color: #000;
+}
+
+.menu__left {
+    border-right: 1px solid #ccc;
+}
+
+.menu__left_link {
+    color: #3277cc;
+}
+
+.menu__left_link:hover {
+    color: #e78131;
+}
+
+.product {
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.product:hover {
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.16);
+}
+
+.product__img img {
+    width: 100%;
+}
+
+.product__name {
+    margin: 10px 0;
+    text-transform: capitalize;
+    font-size: 18px;
+    text-align: center;
+}
+
+.product__name a {
+    color: #222;
+}
+
+.product__name a:hover {
+    text-decoration: none;
+    color: #e78131;
+}
+
+.product__rating {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #e78131;
+}
+
+.product__price_btn {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.single__product__img img {
+    width: 100%;
+}
+
+.single__product_price {
+    font-size: 18px;
+}
+
+.contacts__title {
+    margin-bottom: 30px;
+}
+
+.city_select {
+    cursor: pointer;
+    list-style: none;
+}
+
+.city_select:hover {
+    background-color: #ccc;
+}
+
+.tab {
+    max-width: 700px;
+    margin: 0 0 30px;
+}
+
+.tab__item {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    position: relative;
+}
+
+.tab__item li {
+    padding: 10px;
+    margin: 0 4px 0 0;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+
+.tab__item li.active {
+    border-bottom: none;
+    background-color: #ccc;
+}
+
+.tab__item li:not(.active) {
+    cursor: pointer;
+}
+
+.tab__description {
+    display: none;
+    min-height: 150px;
+    margin-top: -1px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.tab__description.active {
+    display: block;
+}
+
+.review_item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.review_text {
+    margin-bottom: 15px;
+}
+
+.review_author,
+.review_date {
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.mod_review_btn {
+    margin-right: 15px;
+}
+
+.productCartCard {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.productsInCart {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productCartCard_image {
+    display: block;
+    width: 100px;
+}
+
+.productCartCard_image img {
+    width: 100%;
+}
+
+.productCartInfo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10px;
+}
+
+.productCartCard .product_name {
+    margin: 5px 0;
+}
+
+.productCartPrice {
+    margin-bottom: 5px;
+}
+
+.productCartButton {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    border: none;
+    background-color: transparent;
+    color: red;
+}
+
+.cartStatistics {
+    border-top: 1px solid #616161;
+    padding-top: 15px ;
+}
+
+.cart-menu {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.verified {
+    background-color: darkseagreen;
+}
+
+.recommendation {
+    margin-top: 40px;
+}
+
+.recommendation__title {
+    margin-bottom: 40px;
+}
+
+.recommendation__item img {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+.activeDrop .header__cart_btn {
+    color: #e78131;
+}
+
+.hoverDrop .header__cart_btn {
+    color: green;
+}
+
+.footer {
+    flex: 0 0 auto;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>task 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="task 1-2.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="task 1-2.css">
+</head>
+
+<body>
+  <h1>lesson: 6</h1>
+  <br>
+  <form action="#">
+    <input class="textbox" id="name" type="text" placeholder="ФИО">
+    <input class="textbox" id="datepicker" placeholder="дата рождения 01.01.2018">
+    <input class="textbox" id="tel" type="tel" placeholder="+7(000)000-0000">
+    <input class="textbox" id="mail" type="mail" placeholder="my-mail@mail.ru">
+    <input list="citiesList" class="textbox" id="citieName" type="text" placeholder="Москва">
+    <datalist id="citiesList">
+    
+    </datalist>
+    <textarea class="message" name="" id="" cols="22" rows="10"></textarea>
+    <button id="btn1" class="button" onclick="validation()">Отправить</button>
+  </form>
+
+  <p id="dialog" style="text-align: center;" title="Что-то пошло не так :("></p>
+
+</body>
+
+</html>
