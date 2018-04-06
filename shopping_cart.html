@@ -30,25 +30,26 @@
 		<div class="cart__wrap">
 			<div class="cart__item cart__title">
 				<div class="title__productDetails">
-					<h3 class="productDetails__title">Product Details</h3>
+					<h3 class="productDetails__title">Детлаи заказа</h3>
 				</div>
 				<div class="title__productInfo">
-					<h3 class="info__price">unite Price</h3>
-					<h3 class="info__quantity">Quantity</h3>
-					<h3 class="info__shipping">shipping</h3>
-					<h3 class="info__subtotal">Subtotal</h3>
-					<h3 class="info__action">ACTION</h3>
+					<h3 class="info__price">Цена</h3>
+					<h3 class="info__quantity">Количество</h3>
+					<h3 class="info__shipping">доставка</h3>
+					<h3 class="info__subtotal">Общая цена</h3>
+					<h3 class="info__action">Удалить</h3>
 				</div>
 
 
 			</div>
+			<div class="cart__items" id="cart__items">
 			<div class="cart__item cart__prod">
 				<div class="prod__productDetails">
 					<img src="./img/prod__1.jpg" alt="" class="prod__img" style=" width:100px; height:115px">
 					<div class="prod__options">
 						<h3 class="prod__title">Mango People T-shirt</h3>
-						<p class="prod__color">Color: <span class="prod__color--red">red</span></p>
-						<p class="prod__size">Size: <span class="prod__size--xii">xii</span></p>
+						<p class="prod__color">Color: <span class="prod__color--red">черный</span></p>
+						<p class="prod__size">Size: <span class="prod__size--xii">XL</span></p>
 					</div>
 				</div>
 				<div class="prod__info">
@@ -59,7 +60,7 @@
 						<input type="text" value="2">
 					</div>
 					<div class="info__shipping">
-						<p>FREE</p>
+						<p>Бесплатно</p>
 					</div>
 					<div class="info__subtotal">
 						<p>$300</p>
@@ -76,8 +77,8 @@
 					<img src="./img/prod__2.jpg" alt="" class="prod__img" style=" width:100px; height:115px">
 					<div class="prod__options">
 						<h3 class="prod__title">Mango People T-shirt</h3>
-						<p class="prod__color">Color: <span class="prod__color--red">red</span></p>
-						<p class="prod__size">Size: <span class="prod__size--xii">xii</span></p>
+						<p class="prod__color">Color: <span class="prod__color--red">красный</span></p>
+						<p class="prod__size">Size: <span class="prod__size--xii">XL</span></p>
 					</div>
 				</div>
 				<div class="prod__info">
@@ -88,7 +89,7 @@
 						<input type="text" value="2">
 					</div>
 					<div class="info__shipping">
-						<p>FREE</p>
+						<p>Бесплатно</p>
 					</div>
 					<div class="info__subtotal">
 						<p>$300</p>
@@ -105,8 +106,8 @@
 					<img src="./img/prod__8.jpg" alt="" class="prod__img" style=" width:100px; height:115px">
 					<div class="prod__options">
 						<h3 class="prod__title">Mango People T-shirt</h3>
-						<p class="prod__color">Color: <span class="prod__color--red">red</span></p>
-						<p class="prod__size">Size: <span class="prod__size--xii">xii</span></p>
+						<p class="prod__color">Color: <span class="prod__color--red">не черный</span></p>
+						<p class="prod__size">Size: <span class="prod__size--xii">S</span></p>
 					</div>
 				</div>
 				<div class="prod__info">
@@ -117,7 +118,7 @@
 						<input type="text" value="2">
 					</div>
 					<div class="info__shipping">
-						<p>FREE</p>
+						<p>Бесплатно</p>
 					</div>
 					<div class="info__subtotal">
 						<p>$300</p>
@@ -129,33 +130,34 @@
 
 
 			</div>
-			<div class="cart__btn">
-				<button class="btn__clear">cLEAR SHOPPING CART</button>
-				<button class="btn__continue">cONTINUE sHOPPING<sHOPPING></sHOPPING></button>
+			</div>
+			<div class="cart__btn" id="cart__btn">
+				<button class="btn__clear">Отчистить карзину</button>
+				<a class="btn__continue">Продолжить покупки</a>
 			</div>
 			<div class="cart__shipping">
 				<div class="shippingAdress">
-					<h3 class="shippingAdress__title">Shipping Adress</h3>
+					<h3 class="shippingAdress__title">Адресс доставки</h3>
 					<form action="#" class="shippingAdress__form">
-						<input type="text" class="shippingAdress__input shippingAdress__input--country" placeholder="Bangladesh">
-						<input type="text" class="shippingAdress__input shippingAdress__input--state" placeholder="State">
-						<input type="text" class="shippingAdress__input shippingAdress__input--zip" placeholder="Postcode / Zip">
-						<button class="shippingAdress__btn" type="submit">get a quote</button>
+						<input type="text" class="shippingAdress__input shippingAdress__input--country" placeholder="Страна">
+						<input type="text" class="shippingAdress__input shippingAdress__input--state" placeholder="Адрес">
+						<input type="text" class="shippingAdress__input shippingAdress__input--zip" placeholder="Индекс">
+						<input type="checkbox" class="shippingAdress__btn" type="submit">Запомнить адрес как основной</input>
 					</form>
 				</div>
 				<div class="couponDiscount">
-					<h3 class="couponDiscount__title">coupon  discount</h3>
-					<p class="couponDiscount__text">Enter your coupon code if you have one</p>
+					<h3 class="couponDiscount__title">Ваш купон на скидку</h3>
+					<p class="couponDiscount__text">Введите код сюда</p>
 					<form action="#" class="couponDiscount__form">
 						<input type="text" class="couponDiscount__input">
-						<button class="couponDiscount__btn" type="submit">Apply coupon</button>
+						<button class="couponDiscount__btn" type="submit">Использовать купон</button>
 					</form>
 				</div>
 				<div class="total">
 					<div class="total__wrap">
-						<p class="total__sub">Sub total  <span class="total__sub--price">$900</span></p>
-						<p class="total__grand">GRAND TOTAL<span class="total__grand--prise">$900</span></p>
-						<a href="#" class="total__link">proceed to checkout</a>
+						<p class="total__sub">Цена без скидки<span class="total__sub--price">$900</span></p>
+						<p class="total__grand">Цена со скидкой<span class="total__grand--prise">$900</span></p>
+						<a href="#" class="total__link">Перейти к оплате</a>
 					</div>
 
 				</div>

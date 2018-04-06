@@ -1,8 +1,12 @@
 module.exports = {
-    "extends": ["airbnb",
-  "plugin:prettier/recommended"
+    "extends": ["airbnb"
       ],
   "plugins": [
     "babel"
-  ]
+  ],
+  "env": {
+    "es6": true,
+    "jquery": true
+  },
+
 };

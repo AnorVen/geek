@@ -1,16 +1,3 @@
-/*
-
- <div class="container">
-    <div id="comments" class="comments"></div>
-    <div class="comment-input">
-      <textarea name="comment-input" id="comment-input"></textarea>
-      <button id="add-comment">Добавить комментарий</button>
-    </div>
-  </div>
- */
-
-
-
 class Comment {
   constructor(id, text, date, liked = false, stars, name) {
     this.id = id;
@@ -19,6 +6,7 @@ class Comment {
     this.liked = liked;
     this.stars = stars || 5;
     this.name = name || 'Ананаимус'
+    this._pushComments();
   }
   getHTML() {
     let commentContainer = document.createElement('div');
@@ -73,6 +61,24 @@ class Comment {
     commentContainer.appendChild(btnContainer);
     return commentContainer;
   }
+  _pushComments() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('post', '?', true);
+    xhr.onreadystatechange = () => {
+      if(xhr.readyState !== 4) {
+        return;
+      }
+      if(xhr.status !== 200) {
+        return;
+      } else {
+        let newComments = JSON.stringify(this.id, this.text, this.date, this.liked, this.stars, this.name);
+        alert(newComments);
+
+      }
+    }
+    xhr.send();
+  }
+
 }
 
 class Comments {
@@ -117,9 +123,10 @@ class Comments {
   }
   add() {
     let id = this._getIdOfComment();
-    this.commentsItem.push(new Comment(id, document.querySelector(this.newTextComment).value,
-      this._getDateComment(), '', document.querySelector(this.idStar).value,
-      document.querySelector(this.idName).value));
+    let text = document.querySelector(this.newTextComment).value;
+    let stars = parseInt(document.querySelector(this.idStar).value);
+    let name = document.querySelector(this.idName).value;
+    this.commentsItem.push(new Comment(id, text, this._getDateComment(), false,stars, name));
     this.render();
   }
   remove(e) {

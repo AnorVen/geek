@@ -37,6 +37,13 @@ $(document).ready(function () {
   let basket = new Basket();
 
   $('.card__menu').append(basket.collectBasketItems());
+  let shoppingCart = $('section').is('.shopping-cart');
+  if(shoppingCart){
+    let basketShoppingCart = new Basket();
+    $('.cart__items').append(basketShoppingCart.collectCartItems());
+  }
+
+
 
   //$('.product__btn').on('click', function () {
 
@@ -125,7 +132,7 @@ $(document).ready(function () {
     let comments = $('div').is('#comments');
     if(comments){
       new Comments('#comments', '#add-comment',
-        '#comment-input', '#single-stars', '#comments-name');
+        '#comment-input', '#single-stars', '#comment-name');
     }
 
 
