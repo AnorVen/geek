@@ -8,7 +8,7 @@ var mqpacker = require("css-mqpacker");
 var imagemin = require("gulp-imagemin");
 var minify = require("gulp-csso");
 var rename = require("gulp-rename");
-var svgmin = require("gulp-svgmin")
+var svgmin = require("gulp-svgmin");
 var svgstore = require("gulp-svgstore");
 var server = require("browser-sync").create();
 var cleanCSS = require('gulp-clean-css');
@@ -17,13 +17,21 @@ var run = require("run-sequence");
 var del = require("del");
 var fileinclude = require('gulp-file-include');
 var uglify = require("uglify-js");
-var sourcemaps = require('gulp-sourcemaps')
+var sourcemaps = require('gulp-sourcemaps');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 var csscomb = require('gulp-csscomb');
 var babel = require('gulp-babel');
 var stylint = require('gulp-stylint');
 const eslint = require('gulp-eslint');
+const webpack  = require('webpack');
+const gutil    = require('gulp-util');
+const notifier = require('node-notifier');
+var webpackConfig = require('./webpack.config.js');
+var statsLog      = { // для красивых логов в консоли
+  colors: true,
+  reasons: true
+};
 
 
 gulp.task("style", function () {
@@ -73,11 +81,11 @@ gulp.task("images", function () {
 
 gulp.task("copy", ["html:copy"], function () {
   return gulp.src([
-    "fonts/**/*",
-    "img/**",
-    "js/**",
-    "video/*",
-    "others/**/*"
+    "./fonts/**/*",
+    "./img/**",
+    "./js/**",
+    "./video/*",
+    "./others/**/*"
 
   ], {
     base: "."
@@ -100,7 +108,7 @@ gulp.task("symbols", function () {
 });
 
 gulp.task("html:copy", function () {
-  return gulp.src("[^_]*.html")
+  return gulp.src("./[^_]*.html")
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -159,6 +167,7 @@ gulp.task("serve", function () {
   gulp.watch("styl/**/*.css", ["style"]);
   gulp.watch("html__blocks/*.html", ["html:update"]);
   gulp.watch("*.html", ["html:update"]);
+//  gulp.watch("js/*.js", ["js"]);
   gulp.watch("js/*.js", ["js"]);
 
 });
@@ -171,7 +180,38 @@ gulp.task("build", function (fn) {
     "symbols",
     "images",
     "js",
+  //  "scripts",
     fn
   );
 });
 
+
+
+
+gulp.task('scripts', (done) => {
+  // run webpack
+  webpack(webpackConfig, onComplete);
+  function onComplete(error, stats) {
+    if (error) { // кажется еще не сталкивался с этой ошибкой
+      onError(error);
+    } else if ( stats.hasErrors() ) { // ошибки в самой сборке, к примеру "не удалось найти модуль по заданному пути"
+      onError( stats.toString(statsLog) );
+    } else {
+      onSuccess( stats.toString(statsLog),
+      server.reload()
+      );
+    }
+  }
+  function onError(error) {
+    let formatedError = new gutil.PluginError('webpack', error);
+    notifier.notify({ // чисто чтобы сразу узнать об ошибке
+      title: `Error: ${formatedError.plugin}`,
+      message: formatedError.message
+    });
+    done(formatedError);
+  }
+  function onSuccess(detailInfo) {
+    gutil.log('[webpack]', detailInfo);
+    done();
+  }
+});

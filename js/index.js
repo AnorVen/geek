@@ -1,14 +1,19 @@
 'use strict';
+//import 'jquery';
+@@include('./jquery-ui.js')
+@@include( './owl.carousel.min.js')
+@@include( './jQAllRangeSliders-min.js')
 
 @@include('./Container.js')
 @@include('./SearchSelectList.js')
-@@include('./Basket.js')
-@@include('./HeaderMenu.js')
-@@include('./Products.js')
-@@include('./comment.js')
+@@include( './Basket.js')
+@@include( './HeaderMenu.js')
+@@include( './Products.js')
+@@include( './comment.js')
 
 
 $(document).ready(function () {
+
   let searchList = new SearchSelectList();
   searchList.ajax();
   $('.search-select').append(searchList.render());
@@ -19,15 +24,15 @@ $(document).ready(function () {
   $('.FeturedItems__link').on('click', function (e) {
     e.preventDefault();
     items.ajax();
-  })
+  });
 
 
-  /*
-  header-menu рендерится на php -т.к. в процессе работы оно не перестраивается.
+
+//  header-menu рендерится на php -т.к. в процессе работы оно не перестраивается.
   let headerMenu = new HeaderMenu();
     headerMenu.ajax();
 
-   */
+
 
   $('#search-select__list li').on('click', function () {
     $('#search__select option').attr('value', this.innerHTML).text(this.innerHTML);
@@ -38,11 +43,10 @@ $(document).ready(function () {
 
   $('.card__menu').append(basket.collectBasketItems());
   let shoppingCart = $('section').is('.shopping-cart');
-  if(shoppingCart){
+  if (shoppingCart) {
     let basketShoppingCart = new Basket();
     $('.cart__items').append(basketShoppingCart.collectCartItems());
   }
-
 
 
   //$('.product__btn').on('click', function () {
@@ -100,21 +104,21 @@ $(document).ready(function () {
   $('body').on('click', '.choosr__btn', addToCardSingle);
   $('body').on('click', '.result__btn', addToCard);
 
-
+/*
   $('.product__item').draggable({
-      addClasses: false,
-      revert: true,
-      stack: ".product__item",
-      start: function () {
-        $(this).css({'transform': 'scale(0.5)'})
+    addClasses: false,
+    revert: true,
+    stack: ".product__item",
+    start: function () {
+      $(this).css({'transform': 'scale(0.5)'})
 
-      },
-      stop: function () {
-        $(this).css({'transform': 'scale(1)'})
-        $(this).addToCard();
+    },
+    stop: function () {
+      $(this).css({'transform': 'scale(1)'})
+      $(this).addToCard();
 
-      }
-    });
+    }
+  });
   $(".droppable").droppable({
     accept: ".product__item",
     classes: {
@@ -123,24 +127,44 @@ $(document).ready(function () {
     },
     drop: this.addToCard
 
-  });
+  });*/
 
 
 
+  const dragDrop = {
+    init() {
+      this.createDragDrop();
+    },
 
-
-    let comments = $('div').is('#comments');
-    if(comments){
-      new Comments('#comments', '#add-comment',
-        '#comment-input', '#single-stars', '#comment-name');
+    createDragDrop () {
+      $('.product__item').draggable({
+        helper: 'clone',
+        revert: 'invalid'
+      });
+      $('.header__top-wrap.droppable').droppable({
+        activeClass: 'ui-state-active',
+        hoverClass: 'ui-state-hover',
+        tolerance: 'touch',
+        opacity: 0.1,
+        over: function (event, ui) {
+          let clone = ui.draggable.clone();
+          clone.prevObject.find('.product__btn').click();
+        }
+      });
     }
+  };
+  dragDrop.init();
+
+
+  let comments = $('div').is('#comments');
+  if (comments) {
+    new Comments('#comments', '#add-comment',
+      '#comment-input', '#single-stars', '#comment-name');
+  };
 
 
 
-
-@@include('./validations.js')
-
-@@include('./sliders.js')
-
+@@include( './validations.js')
+@@include( './sliders.js')
 });
 

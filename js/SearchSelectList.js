@@ -1,7 +1,7 @@
 class SearchSelectList extends Container {
-  Constructor(my_id, my_class) {
-    this.id = my_id;
-    this.className = my_class;
+  Constructor(myId, myClass) {
+    this.id = myId;
+    this.className = myClass;
     this.items = [];
     this.ajax();
   }
@@ -12,10 +12,6 @@ class SearchSelectList extends Container {
     items.forEach(function (item) {
       result += '<li class="' + item.class + '" data-value=' + item.data + ' >' + item.name + '</li>';
     });
-    /* for( let i = 0, i < this.items.length; i++){
-       result += i
-     }*/
-
     result += '</ul>';
     return result;
   }
