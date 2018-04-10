@@ -1,8 +1,3 @@
-/*
-header-menu рендерится на php -т.к. в процессе работы оно не перестраивается.
-
-*/
-
 class HeaderMenu extends Container {
   Constructor(my_id, my_class) {
     this.id = my_id;
@@ -34,20 +29,27 @@ class HeaderMenu extends Container {
   renderHeaderMenu() {
     // console.log(123)
     let result = '<ul class="' + this.className + '" id="' + this.id + '">';
-    let a = [];
     for (let i = 0; i < this.items.length; i++) {
       let itemMenu = '<li class="' + this.items[i].class + '"><a href="' + this.items[i].link + '">' +
         this.items[i].title + '</a>';
 
       if (this.items[i].submenu) {
         let submenu = '<div class="sub-nav">';
-        console.log(this.items[i].submenu);
-        let submenuCol = '<div >';
+        let submenuCol = '';
         for (let j = 0; j < this.items[i].submenu.length; j++) {
-            submenuCol += '<div class="' + this.items[i].submenu[j].title + '">' +
+          if(this.items[i].submenu[j].type != "pic"){
+
+
+            submenuCol += '<div class="' + this.items[i].submenu[j].class + '">' +
             '<a href="' + this.items[i].submenu[j].link + '">'
             + this.items[i].submenu[j].title + '</a></div>';
+          }else{
+            submenuCol += '<div class="' + this.items[i].submenu[j].class + '">' +
+              '<img src="' + this.items[i].submenu[j].link + '" alt="this.items[i].submenu[j].title"></div>';
+
+          }
         }
+
 
 
         submenu += submenuCol;

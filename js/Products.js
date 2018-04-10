@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 class Products extends Container {
   Constructor(my_id, my_class) {
     this.id = my_id;

@@ -22,6 +22,12 @@
       "link": "#",
       "submenu": [
         {
+          "type": "pic",
+          "title": "DRESSES",
+          "link": "./img/1.jpg",
+          "class": "sub-nav__item sub-nav__item--img"
+        },
+        {
           "title": "DRESSES",
           "link": "#",
           "class": "sub-nav__item"

@@ -9,7 +9,7 @@
 </head>
 <body>
 @@include('./html__blocks/header.html')
-<main class="checkout__main">
+<main class="checkout__main checkout">
 	<section class="newArrivals">
 		<div class="newArrivals__wrap">
 			<div class="newArrivals__title">
@@ -27,47 +27,51 @@
 		<div class="delivery__wrap">
 			<div class="delivery__item">
 				<input type="radio" name="delivery" id="shippingAderss" value="shippingAderss" checked>
-				<label for="shippingAderss" class="delivery__title">01. Shipping Adress</label>
+				<label for="shippingAderss" class="delivery__title">01. АДРЕСА ДОСТАВКИ</label>
 				<div class="delivery__shippingAdress">
 					<div class="checkOrReg">
-						<h3 class="checkOrReg__title">Check as a guest or register</h3>
-						<p class="checkOrReg__text">Register with us for future convenience</p>
+						<h3 class="checkOrReg__title">Продолжить в качестве гостя, или зарегестрироваться</h3>
+						<p class="checkOrReg__text">Регестрация предназначена для Вашего удобства</p>
 						<div class="checkOrReg__register">
-							<label class="checkOrReg__label">
-								<input type="radio" name="register" value="guest">checkout as guest
+							<input type="radio" name="register" value="guest" id="guest" checked>
+							<label for="guest" class="checkOrReg__label">
+								Продолжить как гость
 							</label>
-							<label class="checkOrReg__label">
-								<input type="radio" name="register" value="register">register
+							<input type="radio" name="register" value="register" id="register">
+							<label for="register" class="checkOrReg__label">
+								Зарегестрироваться
 							</label>
 						</div>
-						<h3 class="checkOrReg__title">register and save time!</h3>
-						<p class="checkOrReg__text">Register with us for future convenience</p>
+						<h3 class="checkOrReg__title">Зарегестрируйтесь!</h3>
+						<p class="checkOrReg__text">Зарегистрируйтесь у нас для будущего удобства</p>
 
 						<ul class="checkOrReg-adv__list">
 							<li class="checkOrReg-adv__item">
-								<p><i class="fa fa-angle-double-right" aria-hidden="true"></i>Fast and easy checkout</p>
+								<p><i class="fa fa-angle-double-right" aria-hidden="true"></i>Быстрая и легкая проверка</p>
 							</li>
 							<li class="checkOrReg-adv__item">
-								<p><i class="fa fa-angle-double-right" aria-hidden="true"></i>Easy access to your order history and
-									status</p>
+								<p><i class="fa fa-angle-double-right" aria-hidden="true"></i>Легкий доступ к истории и статусу заказа</p>
 							</li>
 						</ul>
-						<button class="checkOrReg__btn">Continue</button>
+						<button class="checkOrReg__btn">Продолжить</button>
 
 
 					</div>
 					<div class="alreadyRegisted">
-						<h3 class="alreadyRegisted__title">Already registed?</h3>
-						<p class="alreadyRegisted__text">Please log in below</p>
-						<label for="" class="alreadyRegisted__label">EMAIL ADDRESS *
-							<input type="text">
-						</label>
-						<label for="" class="alreadyRegisted__label">PASSWORD *
-							<input type="text">
-						</label>
-						<div class="alreadyRegisted__coment">* Required Fileds</div>
-						<button class="alreadyRegisted__btn">Log in</button>
-						<a href="" class="alreadyRegisted__link">Forgot Password?</a>
+						<form action="?">
+							<h3 class="alreadyRegisted__title">УЖЕ ЗАРЕГИСТРИРОВАЛИСЬ?</h3>
+							<p class="alreadyRegisted__text">Введите данные в форму ниже</p>
+							<label for="" class="alreadyRegisted__label">EMAIL адрес *
+								<input type="text">
+							</label>
+							<label for="" class="alreadyRegisted__label">Пароль *
+								<input type="text">
+							</label>
+							<div class="alreadyRegisted__coment">* Обязательные формы</div>
+							<button class="alreadyRegisted__btn" type="submit">Войти</button>
+							<a href="#" class="alreadyRegisted__link">Забыли пароль?</a>
+						</form>
+
 
 
 					</div>
@@ -75,38 +79,24 @@
 
 				</div>
 			</div>
+			<div class="delivery__item delivery__item--none">
+				<input type="radio" name="delivery" id="shippingRegistration" value="shippingInformation">
+				<label for="shippingRegistration" class="delivery__title">Регистрация</label>
+				<div class="delivery__shippingInformation">
+
+				</div>
+			</div>
 			<div class="delivery__item">
 				<input type="radio" name="delivery" id="billingInformation" value="billingInformation">
-				<label for="billingInformation" class="delivery__title">02. BILLING INFORMATION</label>
+				<label for="billingInformation" class="delivery__title">Адрес доставки</label>
 				<div class="delivery__billingInformation">
 
 				</div>
 			</div>
 			<div class="delivery__item">
 				<input type="radio" name="delivery" id="shippingInformation" value="shippingInformation">
-				<label for="shippingInformation" class="delivery__title">03. SHIPPING INFORMATION</label>
+				<label for="shippingInformation" class="delivery__title">Оплата</label>
 				<div class="delivery__shippingInformation">
-
-				</div>
-			</div>
-			<div class="delivery__item">
-				<input type="radio" name="delivery" value="shippingMethod" id="shippingMethod">
-				<label for="shippingMethod" class="delivery__title">04. SHIPPING METHOD</label>
-				<div class="delivery__shippingMethod">
-
-				</div>
-			</div>
-			<div class="delivery__item">
-				<input type="radio" name="delivery" value="paymentMethod" id="paymentMethod">
-				<label for="paymentMethod" class="delivery__title">05. PAYMENT METHOD</label>
-				<div class="delivery__paymentMethod">
-
-				</div>
-			</div>
-			<div class="delivery__item">
-				<input type="radio" name="delivery" id="orderReview" value="orderReview">
-				<label for="orderReview" class="delivery__title">06. ORDER REVIEW</label>
-				<div class="delivery__orderReview">
 
 				</div>
 			</div>

@@ -1,15 +1,16 @@
 'use strict';
-//import 'jquery';
+
+@@include('./jquery-3.3.1.js')
 @@include('./jquery-ui.js')
-@@include( './owl.carousel.min.js')
-@@include( './jQAllRangeSliders-min.js')
+@@include('./owl.carousel.min.js')
+@@include('./jQAllRangeSliders-min.js')
 
 @@include('./Container.js')
 @@include('./SearchSelectList.js')
-@@include( './Basket.js')
-@@include( './HeaderMenu.js')
-@@include( './Products.js')
-@@include( './comment.js')
+@@include('./Basket.js')
+@@include('./HeaderMenu.js')
+@@include('./Products.js')
+@@include('./comment.js')
 
 
 $(document).ready(function () {
@@ -27,11 +28,8 @@ $(document).ready(function () {
   });
 
 
-
-//  header-menu рендерится на php -т.к. в процессе работы оно не перестраивается.
   let headerMenu = new HeaderMenu();
-    headerMenu.ajax();
-
+  headerMenu.ajax();
 
 
   $('#search-select__list li').on('click', function () {
@@ -49,9 +47,6 @@ $(document).ready(function () {
   }
 
 
-  //$('.product__btn').on('click', function () {
-
-
   function addToCard() {
     console.log(1);
     let idProduct = parseInt($(this).attr('id').split('-')[1]);
@@ -64,9 +59,9 @@ $(document).ready(function () {
 
 
     basket.add(idProduct, quantity, price, src, title, stars)
-    // console.log(idProduct, quantity, price, src, title, stars);
 
   }
+
 
   function addToCardSingle() {
     console.log(1);
@@ -79,56 +74,24 @@ $(document).ready(function () {
     let quantity = $(this).parents('.info').find('input.choose__quantity').val() || 1;
 
 
-    basket.add(idProduct, quantity, price, src, title, stars)
-    // console.log(idProduct, quantity, price, src, title, stars);
+
+  basket.add(idProduct, quantity, price, src, title, stars);
 
   }
 
-  /* function addToCard(e) {
-   console.log(1);
-   let idProduct = parseInt($(e.target).attr('id').split('-')[1]);
-   let price = parseFloat($(e.target).parents('.product__item').find('.product__price').text()
-     .replace(/[^\d.]/g, ""));
-   let src = $(e.target).parents('.product__item').find('.product__img').attr('src');
-   let title = $(e.target).parents('.product__item').find('.product__text').text();
-   let stars = parseInt($(e.target).attr('data-stars')) || 5;
-   let quantity = 1;
+  let main = $('div').is('.index');
+  if(main){
+    $('body').on('click', '.product__btn', addToCard);
+  }
+  let product = $('div').is('.product');
+  if(product){
+    $('body').on('click', '.choosr__btn', addToCardSingle);
+  }
 
 
-   basket.add(idProduct, quantity, price, src, title, stars)
-   // console.log(idProduct, quantity, price, src, title, stars);
 
- }*/
 
-  $('body').on('click', '.product__btn', addToCard);
-  $('body').on('click', '.choosr__btn', addToCardSingle);
   $('body').on('click', '.result__btn', addToCard);
-
-/*
-  $('.product__item').draggable({
-    addClasses: false,
-    revert: true,
-    stack: ".product__item",
-    start: function () {
-      $(this).css({'transform': 'scale(0.5)'})
-
-    },
-    stop: function () {
-      $(this).css({'transform': 'scale(1)'})
-      $(this).addToCard();
-
-    }
-  });
-  $(".droppable").droppable({
-    accept: ".product__item",
-    classes: {
-      "ui-droppable-active": "ui-state-active",
-      "ui-droppable-hover": "ui-state-hover"
-    },
-    drop: this.addToCard
-
-  });*/
-
 
 
   const dragDrop = {
@@ -136,7 +99,7 @@ $(document).ready(function () {
       this.createDragDrop();
     },
 
-    createDragDrop () {
+    createDragDrop() {
       $('.product__item').draggable({
         helper: 'clone',
         revert: 'invalid'
@@ -162,9 +125,52 @@ $(document).ready(function () {
       '#comment-input', '#single-stars', '#comment-name');
   };
 
+  ///////////////////------------
+  /// попробовал сделать сортировку.. но кажется это лучше делать
+  // через ррендер и через сортировку данных из ajax
+  /*
+  let productProduction = $('section').is('.productProduction');
+
+  function sortByName() {
+      let productItem = document.querySelectorAll('.product__item');
+      let newArr = []
+      for(let i = 0; i < productItem.length; i++){
+        newArr.push(productItem[i].innerHTML)
+      }
+    for (let i = 0; i < productItem.length - 1; i++) {
+      for (let j = 0; j < productItem.lenth - 1 - i; j++) {
+
+        // var b = a[1].childNodes[3].childNodes[1]
+        if (productItem[j + 1].childNodes[3].childNodes[1].innerHTML < productItem[j].childNodes[3].childNodes[1].innerHTML) {
+          let t = newArr[j + 1];
+          newArr[j + 1] = newArr[j];
+          newArr[j] = t;
+        }
+      }
 
 
-@@include( './validations.js')
-@@include( './sliders.js')
+    }
+    console.log(newArr);
+  }
+
+  if (productProduction) {
+    $('#sortBy').on('click', function () {
+      sortByName();
+
+    });
+
+  }
+*/
+
+  let delivery = $('section').is('.delivery');
+  if (delivery) {
+
+  };
+
+
+
+
+@@include('./validations.js')
+@@include('./sliders.js')
 });
 

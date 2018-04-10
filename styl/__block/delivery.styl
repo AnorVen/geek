@@ -9,6 +9,12 @@
     input[type=radio] {
       display: none
     }
+    input[type=radio] + label:hover{
+      color: rosy-pink;
+    }
+    input:checked + label{
+      color: red;
+    }
   }
   &__title {
     padding-top: 27px;
@@ -179,3 +185,6 @@
 
 
 }
+  .delivery__item--none{
+    display none;
+  }
