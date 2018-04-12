@@ -172,5 +172,9 @@ $(document).ready(function () {
 
 @@include('./validations.js')
 @@include('./sliders.js')
+
+
+
+
 });
 
