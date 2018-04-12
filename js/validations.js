@@ -29,29 +29,33 @@ mailFprm.on('submit', function (e) {
 });
 */
 function mailValidation(self, type) {
-  let value = self.parent('form').children('input[name=' + type + ']').val();
-
+  let value;
   let regExpText;
   switch (type) {
     case 'mail':
       regExpText = regExpMail;
+      value = self.parent('form').children('input[name=mail]').val();
       break;
     case 'name':
       regExpText = regExpName;
+      value = self.parent('form').children('input[name=name]').val();
       break;
     case 'pas':
       regExpText = regExpPas;
+      value = self.parent('form').children('input[name=pas]').val();
       break;
     default:
       regExpText = regExpPhone;
+      value = self.parent('form').children('input[name=phone]').val();
       break;
   }
   if (regExpText.test(value)) {
-    self.parent('form').children('.error').remove();
+    self.parent('form').append('<p class="aa">' + type + 'введен верно </p>');
     return true;
   } else {
     self.parent('form').children('.error').remove();
-    self.parent('form').append('<p class="error"> почта введена не верно </p>');
+    self.parent('form').children('.aa').remove();
+    self.parent('form').append('<p class="error">' + type + 'введен не верно; <br>'+ value +'</p>');
     return false;
   }
 }
@@ -61,16 +65,21 @@ mailFprm.on('click', function (e) {
   e.preventDefault();
   if (mailValidation($(this), 'mail')) {
     $(this).parent('form').submit();
-  };
+  }
+  ;
 });
 
-let alreadyRegisted = $('.alreadyRegisted__submit');
+let alreadyRegisted = $('.alreadyRegisted__btn');
 alreadyRegisted.on('click', function (e) {
   e.preventDefault();
-  if (mailValidation($(this), 'pas') && mailValidation($(this), 'mail')) {
-    $(this).parent('form').submit();
-    console.log('ok')
-  };
+  if (mailValidation($(this), 'pas')) {
+    console.log('pas');
+    if (mailValidation($(this), 'mail')) {
+      console.log('mail');
+     // $(this).parent('form').submit();
+    }
+ }
+  ;
 });
 
 
