@@ -76,7 +76,7 @@ alreadyRegisted.on('click', function (e) {
     console.log('pas');
     if (mailValidation($(this), 'mail')) {
       console.log('mail');
-     // $(this).parent('form').submit();
+      $(this).parent('form').submit();
     }
  }
   ;

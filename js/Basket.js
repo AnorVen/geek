@@ -130,7 +130,7 @@ class Basket extends Container {
         '<div class="cart__item cart__prod" id="purchase__item-' + i + '">' +
 
         '<div class="prod__productDetails">' +
-        '<img src="' + this.basketItems[i]["src"] + '" style=\" width:100px; height:115px\">' +
+        '<img src="' + this.basketItems[i]["src"] + '" style=" width:100px; height:115px">' +
 
 
         '<div class="prod__options">' +
@@ -152,15 +152,13 @@ class Basket extends Container {
         '</p></div>'
 
         + '<div class="info__action"  ><a href="#">' +
-        '<i class="fa fa-times-circle" aria-hidden="true" id="info__action-' + i + '"></i></a></div>' +
-        '</div></div>');
+        '<i class="fa fa-times-circle" aria-hidden="true" id="info__action-' + i + '"></i></a></div></div></div>');
 
     }
 
 
     let deleteItem = this.deleteCadt.bind(this);
     $('.info__action').on('click', 'a i', function () {
-      console.log(2);
       let item = $(this).attr('id').split('-')[1];
       deleteItem(item);
     });
@@ -173,7 +171,7 @@ class Basket extends Container {
       totalPrice += a[i]*b[i];
     }
     $('.total__sub--price').text(totalPrice);
-    $('.total__grand--prise').text(totalPrice * 0.99);
+    $('.total__grand--prise').text((parseInt(totalPrice) * 99)/100);
 
 
   };

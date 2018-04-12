@@ -164,6 +164,16 @@ $(document).ready(function () {
 
   let delivery = $('section').is('.delivery');
   if (delivery) {
+    $('.checkOrReg__btn').on('click', function () {
+
+      if($('#guest').attr('checked') == false){
+        let reg =  $('#shippingRegistration');
+        reg.attr('checked', 'true');
+        reg.parent('.delivery__item').removeClass('delivery__item--none');
+      }else {
+        $('#billingInformation').attr('checked', 'true');
+      }
+    })
 
   };
 
