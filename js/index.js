@@ -79,7 +79,7 @@ $(document).ready(function () {
 
   }
 
-  let main = $('div').is('.index');
+  let main = $('main').is('.index');
   if(main){
     $('body').on('click', '.product__btn', addToCard);
   }

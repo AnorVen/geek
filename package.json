@@ -66,6 +66,7 @@
     "gulp-stylint": "^4.0.1",
     "gulp-stylus": "^2.6.0",
     "gulp-util": "^3.0.8",
+    "jasmine": "^3.1.0",
     "nib": "^1.1.2",
     "node-notifier": "^5.2.1",
     "path": "^0.12.7",
@@ -82,11 +83,11 @@
     "webpack-dev-server": "^3.1.3"
   },
   "scripts": {
-    "test": "editorconfig-cli",
     "build": "gulp build",
     "build-wp": "webpack --mode development",
     "wp-serv": "webpack-dev-server --mode development --open",
-    "start": "npm run build && gulp serve"
+    "start": "npm run build && gulp serve",
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
